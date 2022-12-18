@@ -49,7 +49,6 @@ Partial Class frmPromociones
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.PromocionesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.txtid = New System.Windows.Forms.TextBox()
-        Me.txtdepa = New System.Windows.Forms.TextBox()
         Me.txtpromo = New System.Windows.Forms.TextBox()
         Me.txtproducto = New System.Windows.Forms.TextBox()
         Me.txtpreciounitario = New System.Windows.Forms.TextBox()
@@ -80,6 +79,7 @@ Partial Class frmPromociones
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Id_de_promociónLabel = New System.Windows.Forms.Label()
         DeparmentoLabel = New System.Windows.Forms.Label()
         PromociónLabel = New System.Windows.Forms.Label()
@@ -329,16 +329,6 @@ Partial Class frmPromociones
         Me.txtid.Size = New System.Drawing.Size(288, 38)
         Me.txtid.TabIndex = 2
         '
-        'txtdepa
-        '
-        Me.txtdepa.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PromocionesBindingSource, "Deparmento", True))
-        Me.txtdepa.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtdepa.Location = New System.Drawing.Point(241, 84)
-        Me.txtdepa.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtdepa.Name = "txtdepa"
-        Me.txtdepa.Size = New System.Drawing.Size(288, 38)
-        Me.txtdepa.TabIndex = 4
-        '
         'txtpromo
         '
         Me.txtpromo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PromocionesBindingSource, "Promoción", True))
@@ -526,6 +516,7 @@ Partial Class frmPromociones
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(DeparmentoLabel)
         Me.GroupBox1.Controls.Add(Me.txttotal)
@@ -536,7 +527,6 @@ Partial Class frmPromociones
         Me.GroupBox1.Controls.Add(Me.txtid)
         Me.GroupBox1.Controls.Add(Me.txtsubtotal)
         Me.GroupBox1.Controls.Add(SubtotalLabel)
-        Me.GroupBox1.Controls.Add(Me.txtdepa)
         Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(PromociónLabel)
         Me.GroupBox1.Controls.Add(CantidadLabel)
@@ -560,11 +550,11 @@ Partial Class frmPromociones
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(-7, 1)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(247, 42)
+        Me.Label1.Size = New System.Drawing.Size(200, 36)
         Me.Label1.TabIndex = 47
         Me.Label1.Text = "Promociones"
         '
@@ -613,12 +603,12 @@ Partial Class frmPromociones
         'lblpromo
         '
         Me.lblpromo.BackColor = System.Drawing.Color.Transparent
-        Me.lblpromo.Font = New System.Drawing.Font("Comic Sans MS", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpromo.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblpromo.ForeColor = System.Drawing.Color.Black
         Me.lblpromo.Location = New System.Drawing.Point(301, 44)
         Me.lblpromo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblpromo.Name = "lblpromo"
-        Me.lblpromo.Size = New System.Drawing.Size(604, 87)
+        Me.lblpromo.Size = New System.Drawing.Size(604, 61)
         Me.lblpromo.TabIndex = 48
         Me.lblpromo.Text = "Promociones"
         Me.lblpromo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -679,6 +669,14 @@ Partial Class frmPromociones
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(239, 81)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(289, 43)
+        Me.ComboBox1.TabIndex = 79
+        '
         'frmPromociones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -699,6 +697,7 @@ Partial Class frmPromociones
         Me.Controls.Add(Me.PromocionesBindingNavigator)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPromociones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Promociones"
         CType(Me.PromocionesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PromocionesBindingNavigator.ResumeLayout(False)
@@ -730,7 +729,6 @@ Partial Class frmPromociones
     Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents PromocionesBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtid As System.Windows.Forms.TextBox
-    Friend WithEvents txtdepa As System.Windows.Forms.TextBox
     Friend WithEvents txtpromo As System.Windows.Forms.TextBox
     Friend WithEvents txtproducto As System.Windows.Forms.TextBox
     Friend WithEvents txtpreciounitario As System.Windows.Forms.TextBox
@@ -759,4 +757,5 @@ Partial Class frmPromociones
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnAlta As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

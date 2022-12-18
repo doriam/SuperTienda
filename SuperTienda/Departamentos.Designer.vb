@@ -76,7 +76,7 @@ Partial Class frmDepartamentos
         Id_DepartamentoLabel.BackColor = System.Drawing.Color.Transparent
         Id_DepartamentoLabel.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Id_DepartamentoLabel.ForeColor = System.Drawing.Color.Black
-        Id_DepartamentoLabel.Location = New System.Drawing.Point(16, 254)
+        Id_DepartamentoLabel.Location = New System.Drawing.Point(10, 197)
         Id_DepartamentoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Id_DepartamentoLabel.Name = "Id_DepartamentoLabel"
         Id_DepartamentoLabel.Size = New System.Drawing.Size(215, 38)
@@ -89,7 +89,7 @@ Partial Class frmDepartamentos
         DepartamentoLabel.BackColor = System.Drawing.Color.Transparent
         DepartamentoLabel.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         DepartamentoLabel.ForeColor = System.Drawing.Color.Black
-        DepartamentoLabel.Location = New System.Drawing.Point(16, 330)
+        DepartamentoLabel.Location = New System.Drawing.Point(10, 273)
         DepartamentoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         DepartamentoLabel.Name = "DepartamentoLabel"
         DepartamentoLabel.Size = New System.Drawing.Size(186, 38)
@@ -102,7 +102,7 @@ Partial Class frmDepartamentos
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(760, 589)
+        Me.btnSalir.Location = New System.Drawing.Point(754, 532)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(192, 66)
@@ -116,7 +116,7 @@ Partial Class frmDepartamentos
         Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnVolver.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVolver.Location = New System.Drawing.Point(216, 589)
+        Me.btnVolver.Location = New System.Drawing.Point(192, 532)
         Me.btnVolver.Margin = New System.Windows.Forms.Padding(4)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(192, 66)
@@ -139,7 +139,7 @@ Partial Class frmDepartamentos
         Me.DepartamentosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.DepartamentosBindingNavigator.Name = "DepartamentosBindingNavigator"
         Me.DepartamentosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.DepartamentosBindingNavigator.Size = New System.Drawing.Size(1069, 27)
+        Me.DepartamentosBindingNavigator.Size = New System.Drawing.Size(995, 27)
         Me.DepartamentosBindingNavigator.TabIndex = 19
         Me.DepartamentosBindingNavigator.Text = "BindingNavigator1"
         '
@@ -251,7 +251,7 @@ Partial Class frmDepartamentos
         '
         Me.txtiddep.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DepartamentosBindingSource, "Id Departamento", True))
         Me.txtiddep.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtiddep.Location = New System.Drawing.Point(241, 251)
+        Me.txtiddep.Location = New System.Drawing.Point(235, 194)
         Me.txtiddep.Margin = New System.Windows.Forms.Padding(4)
         Me.txtiddep.Name = "txtiddep"
         Me.txtiddep.Size = New System.Drawing.Size(251, 38)
@@ -261,7 +261,7 @@ Partial Class frmDepartamentos
         '
         Me.txtdepartamento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DepartamentosBindingSource, "Departamento", True))
         Me.txtdepartamento.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtdepartamento.Location = New System.Drawing.Point(241, 330)
+        Me.txtdepartamento.Location = New System.Drawing.Point(235, 273)
         Me.txtdepartamento.Margin = New System.Windows.Forms.Padding(4)
         Me.txtdepartamento.Name = "txtdepartamento"
         Me.txtdepartamento.Size = New System.Drawing.Size(251, 38)
@@ -275,7 +275,7 @@ Partial Class frmDepartamentos
         Me.gridDepartamentos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDepartamentoDataGridViewTextBoxColumn, Me.DepartamentoDataGridViewTextBoxColumn})
         Me.gridDepartamentos.DataSource = Me.DepartamentosBindingSource
         Me.gridDepartamentos.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.gridDepartamentos.Location = New System.Drawing.Point(107, 387)
+        Me.gridDepartamentos.Location = New System.Drawing.Point(101, 330)
         Me.gridDepartamentos.Margin = New System.Windows.Forms.Padding(4)
         Me.gridDepartamentos.Name = "gridDepartamentos"
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -312,7 +312,7 @@ Partial Class frmDepartamentos
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnBuscar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnBuscar.Location = New System.Drawing.Point(794, 481)
+        Me.btnBuscar.Location = New System.Drawing.Point(788, 424)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(192, 60)
@@ -326,7 +326,7 @@ Partial Class frmDepartamentos
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEliminar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnEliminar.Location = New System.Drawing.Point(594, 481)
+        Me.btnEliminar.Location = New System.Drawing.Point(588, 424)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(192, 62)
@@ -340,7 +340,7 @@ Partial Class frmDepartamentos
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnGuardar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnGuardar.Location = New System.Drawing.Point(594, 254)
+        Me.btnGuardar.Location = New System.Drawing.Point(588, 197)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(392, 60)
@@ -356,12 +356,12 @@ Partial Class frmDepartamentos
         'lbldepa
         '
         Me.lbldepa.BackColor = System.Drawing.Color.Transparent
-        Me.lbldepa.Font = New System.Drawing.Font("Comic Sans MS", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbldepa.Font = New System.Drawing.Font("Gill Sans MT", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbldepa.ForeColor = System.Drawing.Color.Black
         Me.lbldepa.Location = New System.Drawing.Point(181, 65)
         Me.lbldepa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldepa.Name = "lbldepa"
-        Me.lbldepa.Size = New System.Drawing.Size(727, 121)
+        Me.lbldepa.Size = New System.Drawing.Size(727, 75)
         Me.lbldepa.TabIndex = 49
         Me.lbldepa.Text = "Departamentos"
         Me.lbldepa.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -372,7 +372,7 @@ Partial Class frmDepartamentos
         Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnModificar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnModificar.Location = New System.Drawing.Point(794, 401)
+        Me.btnModificar.Location = New System.Drawing.Point(788, 344)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(192, 60)
@@ -386,7 +386,7 @@ Partial Class frmDepartamentos
         Me.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnAlta.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnAlta.Location = New System.Drawing.Point(594, 401)
+        Me.btnAlta.Location = New System.Drawing.Point(588, 344)
         Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(192, 60)
@@ -418,7 +418,7 @@ Partial Class frmDepartamentos
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnCancelar.Location = New System.Drawing.Point(594, 330)
+        Me.btnCancelar.Location = New System.Drawing.Point(588, 273)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(392, 60)
@@ -431,7 +431,7 @@ Partial Class frmDepartamentos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1069, 667)
+        Me.ClientSize = New System.Drawing.Size(995, 631)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAlta)
         Me.Controls.Add(Me.btnModificar)
@@ -449,6 +449,7 @@ Partial Class frmDepartamentos
         Me.Controls.Add(Me.btnVolver)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmDepartamentos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Departamentos"
         CType(Me.DepartamentosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DepartamentosBindingNavigator.ResumeLayout(False)

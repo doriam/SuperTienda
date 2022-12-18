@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="SuperTiendaDataSet.vb">
       <DependentUpon>SuperTiendaDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Ventas.Designer.vb">
       <DependentUpon>Ventas.vb</DependentUpon>
@@ -152,6 +153,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SuperTiendaDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -196,14 +198,17 @@
     <None Include="App.config" />
     <None Include="SuperTiendaDataSet.xsc">
       <DependentUpon>SuperTiendaDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="SuperTiendaDataSet.xsd">
+    <Content Include="SuperTiendaDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>SuperTiendaDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="SuperTiendaDataSet.xss">
       <DependentUpon>SuperTiendaDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

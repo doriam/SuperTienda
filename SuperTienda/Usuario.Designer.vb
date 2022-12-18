@@ -44,7 +44,7 @@ Partial Class frmUsuario
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.btnSalir.Location = New System.Drawing.Point(99, 375)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(264, 66)
         Me.btnSalir.TabIndex = 11
@@ -58,7 +58,7 @@ Partial Class frmUsuario
         Me.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnAcceder.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.btnAcceder.Location = New System.Drawing.Point(99, 287)
-        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAcceder.Name = "btnAcceder"
         Me.btnAcceder.Size = New System.Drawing.Size(264, 66)
         Me.btnAcceder.TabIndex = 10
@@ -70,7 +70,7 @@ Partial Class frmUsuario
         Me.txtcontraseña.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.txtcontraseña.ForeColor = System.Drawing.Color.Black
         Me.txtcontraseña.Location = New System.Drawing.Point(99, 230)
-        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.Size = New System.Drawing.Size(265, 38)
         Me.txtcontraseña.TabIndex = 9
@@ -123,7 +123,7 @@ Partial Class frmUsuario
         Me.cboUsuario.FormattingEnabled = True
         Me.cboUsuario.Items.AddRange(New Object() {"Brandon Ruiz", "Bryan Martínez", "Emilio Doria", "Genaro Siller", "Jaresy García", "Jose Martínez", "Karina Ruiz", "Kenia Álvarez", "Luis Cortez", "Martin Moreno", "Nancy Arriaga", "Raúl Ruiz", "Rocío Galvan", "Rodrigo Martínez", "Teresa Doria"})
         Me.cboUsuario.Location = New System.Drawing.Point(101, 135)
-        Me.cboUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.cboUsuario.Name = "cboUsuario"
         Me.cboUsuario.Size = New System.Drawing.Size(263, 43)
         Me.cboUsuario.TabIndex = 0
@@ -132,12 +132,12 @@ Partial Class frmUsuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(155, 54)
+        Me.Label1.Location = New System.Drawing.Point(104, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(170, 29)
+        Me.Label1.Size = New System.Drawing.Size(276, 60)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "BIENVENIDO"
         '
@@ -155,8 +155,9 @@ Partial Class frmUsuario
         Me.Controls.Add(Me.lblcontraseña)
         Me.Controls.Add(Me.lblusuario)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmUsuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bienvenido"
         CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).EndInit()

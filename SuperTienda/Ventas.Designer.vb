@@ -55,6 +55,7 @@ Partial Class frmVentas
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.gridInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,8 +69,8 @@ Partial Class frmVentas
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(527, 740)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSalir.Location = New System.Drawing.Point(524, 687)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(264, 66)
         Me.btnSalir.TabIndex = 18
@@ -82,8 +83,8 @@ Partial Class frmVentas
         Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnVolver.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVolver.Location = New System.Drawing.Point(181, 740)
-        Me.btnVolver.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnVolver.Location = New System.Drawing.Point(178, 687)
+        Me.btnVolver.Margin = New System.Windows.Forms.Padding(4)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(264, 66)
         Me.btnVolver.TabIndex = 17
@@ -93,8 +94,8 @@ Partial Class frmVentas
         'txtcantidad
         '
         Me.txtcantidad.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtcantidad.Location = New System.Drawing.Point(913, 368)
-        Me.txtcantidad.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtcantidad.Location = New System.Drawing.Point(910, 315)
+        Me.txtcantidad.Margin = New System.Windows.Forms.Padding(5)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(137, 38)
         Me.txtcantidad.TabIndex = 22
@@ -105,7 +106,7 @@ Partial Class frmVentas
         Me.lblprecio.BackColor = System.Drawing.Color.Transparent
         Me.lblprecio.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lblprecio.ForeColor = System.Drawing.Color.Black
-        Me.lblprecio.Location = New System.Drawing.Point(539, 372)
+        Me.lblprecio.Location = New System.Drawing.Point(536, 319)
         Me.lblprecio.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblprecio.Name = "lblprecio"
         Me.lblprecio.Size = New System.Drawing.Size(117, 38)
@@ -118,7 +119,7 @@ Partial Class frmVentas
         Me.lbldescrip.BackColor = System.Drawing.Color.Transparent
         Me.lbldescrip.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lbldescrip.ForeColor = System.Drawing.Color.Black
-        Me.lbldescrip.Location = New System.Drawing.Point(13, 373)
+        Me.lbldescrip.Location = New System.Drawing.Point(10, 320)
         Me.lbldescrip.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lbldescrip.Name = "lbldescrip"
         Me.lbldescrip.Size = New System.Drawing.Size(303, 38)
@@ -128,8 +129,8 @@ Partial Class frmVentas
         'txtseleccion
         '
         Me.txtseleccion.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtseleccion.Location = New System.Drawing.Point(13, 287)
-        Me.txtseleccion.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtseleccion.Location = New System.Drawing.Point(10, 234)
+        Me.txtseleccion.Margin = New System.Windows.Forms.Padding(5)
         Me.txtseleccion.Name = "txtseleccion"
         Me.txtseleccion.Size = New System.Drawing.Size(1039, 38)
         Me.txtseleccion.TabIndex = 19
@@ -140,7 +141,7 @@ Partial Class frmVentas
         Me.lblsubtotal.BackColor = System.Drawing.Color.Transparent
         Me.lblsubtotal.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lblsubtotal.ForeColor = System.Drawing.Color.Black
-        Me.lblsubtotal.Location = New System.Drawing.Point(1092, 373)
+        Me.lblsubtotal.Location = New System.Drawing.Point(1089, 320)
         Me.lblsubtotal.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblsubtotal.Name = "lblsubtotal"
         Me.lblsubtotal.Size = New System.Drawing.Size(108, 38)
@@ -162,11 +163,11 @@ Partial Class frmVentas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.gridInventario.DefaultCellStyle = DataGridViewCellStyle1
-        Me.gridInventario.Location = New System.Drawing.Point(25, 482)
-        Me.gridInventario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gridInventario.Location = New System.Drawing.Point(10, 429)
+        Me.gridInventario.Margin = New System.Windows.Forms.Padding(4)
         Me.gridInventario.Name = "gridInventario"
         Me.gridInventario.RowHeadersWidth = 51
-        Me.gridInventario.Size = New System.Drawing.Size(864, 185)
+        Me.gridInventario.Size = New System.Drawing.Size(876, 185)
         Me.gridInventario.TabIndex = 24
         '
         'IdDepartamentoDataGridViewTextBoxColumn
@@ -253,8 +254,8 @@ Partial Class frmVentas
         Me.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSeleccionar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSeleccionar.Location = New System.Drawing.Point(1083, 282)
-        Me.btnSeleccionar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(1080, 229)
+        Me.btnSeleccionar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(264, 66)
         Me.btnSeleccionar.TabIndex = 25
@@ -267,7 +268,7 @@ Partial Class frmVentas
         Me.lblcantidad.BackColor = System.Drawing.Color.Transparent
         Me.lblcantidad.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lblcantidad.ForeColor = System.Drawing.Color.Black
-        Me.lblcantidad.Location = New System.Drawing.Point(756, 369)
+        Me.lblcantidad.Location = New System.Drawing.Point(753, 316)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(139, 38)
@@ -279,8 +280,8 @@ Partial Class frmVentas
         Me.listcuenta.FormattingEnabled = True
         Me.listcuenta.ItemHeight = 16
         Me.listcuenta.Items.AddRange(New Object() {"Artículo " & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Precio" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Cantidad" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Subtotal"})
-        Me.listcuenta.Location = New System.Drawing.Point(915, 539)
-        Me.listcuenta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.listcuenta.Location = New System.Drawing.Point(912, 486)
+        Me.listcuenta.Margin = New System.Windows.Forms.Padding(4)
         Me.listcuenta.Name = "listcuenta"
         Me.listcuenta.Size = New System.Drawing.Size(601, 196)
         Me.listcuenta.TabIndex = 27
@@ -291,7 +292,7 @@ Partial Class frmVentas
         Me.lbltootal.BackColor = System.Drawing.Color.Transparent
         Me.lbltootal.Font = New System.Drawing.Font("Gill Sans MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltootal.ForeColor = System.Drawing.Color.Black
-        Me.lbltootal.Location = New System.Drawing.Point(1196, 759)
+        Me.lbltootal.Location = New System.Drawing.Point(1193, 706)
         Me.lbltootal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltootal.Name = "lbltootal"
         Me.lbltootal.Size = New System.Drawing.Size(120, 47)
@@ -304,7 +305,7 @@ Partial Class frmVentas
         Me.lbltotal.BackColor = System.Drawing.Color.Transparent
         Me.lbltotal.Font = New System.Drawing.Font("Gill Sans MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotal.ForeColor = System.Drawing.Color.White
-        Me.lbltotal.Location = New System.Drawing.Point(1391, 759)
+        Me.lbltotal.Location = New System.Drawing.Point(1388, 706)
         Me.lbltotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(78, 47)
@@ -317,7 +318,7 @@ Partial Class frmVentas
         Me.lblnumero.BackColor = System.Drawing.Color.Transparent
         Me.lblnumero.Font = New System.Drawing.Font("Gill Sans MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblnumero.ForeColor = System.Drawing.Color.Black
-        Me.lblnumero.Location = New System.Drawing.Point(1025, 178)
+        Me.lblnumero.Location = New System.Drawing.Point(1022, 125)
         Me.lblnumero.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblnumero.Name = "lblnumero"
         Me.lblnumero.Size = New System.Drawing.Size(37, 47)
@@ -331,8 +332,8 @@ Partial Class frmVentas
         Me.btnagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnagregar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnagregar.Location = New System.Drawing.Point(1035, 465)
-        Me.btnagregar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnagregar.Location = New System.Drawing.Point(1032, 412)
+        Me.btnagregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(359, 66)
         Me.btnagregar.TabIndex = 31
@@ -345,8 +346,8 @@ Partial Class frmVentas
         Me.btnNueva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnNueva.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnNueva.Location = New System.Drawing.Point(20, 171)
-        Me.btnNueva.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNueva.Location = New System.Drawing.Point(10, 118)
+        Me.btnNueva.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNueva.Name = "btnNueva"
         Me.btnNueva.Size = New System.Drawing.Size(264, 66)
         Me.btnNueva.TabIndex = 32
@@ -359,8 +360,8 @@ Partial Class frmVentas
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnCancelar.Location = New System.Drawing.Point(360, 171)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelar.Location = New System.Drawing.Point(318, 118)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(305, 66)
         Me.btnCancelar.TabIndex = 33
@@ -373,8 +374,8 @@ Partial Class frmVentas
         Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnguardar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnguardar.Location = New System.Drawing.Point(703, 171)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnguardar.Location = New System.Drawing.Point(670, 118)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(264, 66)
         Me.btnguardar.TabIndex = 34
@@ -385,8 +386,8 @@ Partial Class frmVentas
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.ventas_icono
-        Me.PictureBox2.Location = New System.Drawing.Point(1412, 145)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(1409, 92)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 114)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -397,13 +398,26 @@ Partial Class frmVentas
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.icons_club
-        Me.PictureBox1.Location = New System.Drawing.Point(1099, 145)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(1096, 92)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(156, 114)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 35
         Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(659, 30)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(182, 60)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "VENTAS"
         '
         'frmVentas
         '
@@ -411,6 +425,7 @@ Partial Class frmVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1533, 817)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnguardar)
@@ -431,8 +446,9 @@ Partial Class frmVentas
         Me.Controls.Add(Me.txtseleccion)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnVolver)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
         CType(Me.gridInventario, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -474,4 +490,5 @@ Partial Class frmVentas
     Friend WithEvents btnguardar As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -3,13 +3,12 @@
     Public coman As New OleDb.OleDbCommand
     Dim cargar As String
 
-
-
     Dim up As Boolean
 
     Dim buscar As Integer = 1
     Dim eliminar As Integer = 1
     Dim respuesta As Integer
+    Dim Conexion As OleDb.OleDbConnection
 
     Private Sub PromocionesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles PromocionesBindingNavigatorSaveItem.Click
         Me.Validate()
@@ -22,6 +21,7 @@
         'TODO: esta línea de código carga datos en la tabla 'SuperTiendaDataSet.Promociones' Puede moverla o quitarla según sea necesario.
         Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
         btnGuardar.Enabled = False
+        LlenarCombo()
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -36,24 +36,31 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If up = False Then
             Try
-                txtsubtotal.Enabled = True
-                txttotal.Enabled = True
                 Dim subtotal As String = 0
-                Dim precio, cantidad As String
-                precio = txtpreciounitario.Text
-                cantidad = txtcantidad.Text
-                subtotal = precio * cantidad
-                txtsubtotal.Text = subtotal
-                Dim total As String = 0
-                Dim descuento As String
+                'Dim precio, cantidad As String
+                'If Not String.IsNullOrEmpty(txtsubtotal.Text) Then
 
-                subtotal = txtsubtotal.Text
-                descuento = txtdescuento.Text
+                'subtotal = CDbl(txtsubtotal.Text)
+                'End If
+                'precio = txtpreciounitario.Text
+                'cantidad = txtcantidad.Text
+                subtotal = txtpreciounitario.Text * txtcantidad.Text
+                'txtsubtotal.Text = subtotal
+                Dim total As String = 0
+                Dim descuento As Decimal
+                'If Not String.IsNullOrEmpty(txttotal.Text) Then
+
+                'total = CDbl(txttotal.Text)
+                'End If
+                'subtotal = txtsubtotal.Text
+                txtsubtotal.Text = subtotal
+                'descuento = txtdescuento.Text
+                Decimal.TryParse(txtdescuento.Text, descuento)
+                txtdescuento.Text = descuento
                 total = subtotal * descuento
                 txttotal.Text = total
 
-                Decimal.TryParse(txtsubtotal.Text, subtotal)
-                Me.PromocionesTableAdapter.INSERTAR(txtid.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtsubtotal.Text, txtdescuento.Text, txttotal.Text)
+                Me.PromocionesTableAdapter.INSERTAR(ComboBox1.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text)
                 Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -86,7 +93,7 @@
                 descuento = txtdescuento.Text
                 total = subtotal * descuento
                 txttotal.Text = total
-                Me.PromocionesTableAdapter.ACTUALIZAR(txtdepa.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text, txtid.Text)
+                Me.PromocionesTableAdapter.ACTUALIZAR(ComboBox1.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text, txtid.Text)
                 Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtid.Enabled = True
@@ -106,9 +113,6 @@
 
     End Sub
 
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         If buscar = 2 Then
@@ -143,7 +147,7 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         txtid.Enabled = False
         txtcantidad.Enabled = True
-        txtdepa.Enabled = True
+        ComboBox1.Enabled = True
         txtdescuento.Enabled = True
         txtpreciounitario.Enabled = True
         txtproducto.Enabled = True
@@ -162,7 +166,7 @@
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtid.Enabled = True
         txtcantidad.Text = ""
-        txtdepa.Text = ""
+        ComboBox1.SelectedValue = -1
         txtdescuento.Text = ""
         txtpreciounitario.Text = ""
         txtproducto.Text = ""
@@ -188,12 +192,18 @@
         btnAlta.Enabled = True
         Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
     End Sub
-
-    Private Sub txtpromo_TextChanged(sender As Object, e As EventArgs) Handles txtpromo.TextChanged
-
-    End Sub
-
-    Private Sub txtid_TextChanged(sender As Object, e As EventArgs) Handles txtid.TextChanged
-
+    Private Sub LlenarCombo()
+        Conexion = New OleDb.OleDbConnection
+        Conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\SuperTienda.accdb"
+        Conexion.Open()
+        Dim da As New OleDb.OleDbDataAdapter("select * from Departamentos", Conexion)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        If ds.Tables(0).Rows.Count > 0 Then
+            ComboBox1.DataSource = ds.Tables(0)
+            ComboBox1.DisplayMember = "Departamento"
+            ComboBox1.ValueMember = "Id Departamento"
+            ComboBox1.SelectedIndex = -1
+        End If
     End Sub
 End Class

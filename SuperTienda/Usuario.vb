@@ -2,6 +2,7 @@
 Imports System.Data.OleDb
 Public Class frmUsuario
 
+    'A actualizar
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
         Dim usuario, contraseña As String
         Dim consulta As String
@@ -18,7 +19,7 @@ Public Class frmUsuario
             MessageBox.Show("Bienvenido a la Base de datos de el negocio: Super Tienda." & " " & usuario, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Visible = False
             My.Forms.frmPrincipal.Visible = True
-        
+
         End If
     End Sub
     Private Sub frmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,8 +30,5 @@ Public Class frmUsuario
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         End
-    End Sub
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) 
-        MsgBox("Bienvenido a la Base de datos de el negocio: Super Tienda", MsgBoxStyle.Information, "Bienvenido Usuario")
     End Sub
 End Class

@@ -1,8 +1,13 @@
-﻿Public Class frmEmpleados
+﻿Imports System.Data.SqlClient
+Imports WindowsApplication1.SuperTiendaDataSetTableAdapters
+
+Public Class frmEmpleados
     Dim up As Boolean
     Dim buscar As Integer = 1
     Dim eliminar As Integer = 1
     Dim respuesta As Integer
+    Dim Conexion As OleDb.OleDbConnection
+
     Private Sub EmpleadosBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles EmpleadosBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.EmpleadosBindingSource.EndEdit()
@@ -14,6 +19,8 @@
         'TODO: esta línea de código carga datos en la tabla 'SuperTiendaDataSet.Empleados' Puede moverla o quitarla según sea necesario.
         Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
         btnGuardar.Enabled = False
+        LlenarCombo()
+
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
@@ -29,7 +36,7 @@
         If eliminar = 2 Then
             respuesta = MsgBox("¿Está seguro de borrar este dato?", vbQuestion + vbYesNo + vbDefaultButton2, "Eliminar empleado")
             If respuesta = vbYes Then
-                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, txtdepartamento.Text, txtdate.Text)
+                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Se ha eliminado con éxito el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 eliminar = 1
@@ -47,7 +54,7 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If up = False Then
             Try
-                Me.EmpleadosTableAdapter.Insert(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, txtdepartamento.Text, txtdate.Text)
+                Me.EmpleadosTableAdapter.Insert(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -57,7 +64,7 @@
 
         Else
             Try
-                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, txtdepartamento.Text, txtdate.Text, txtclaveempleado.Text)
+                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text, txtclaveempleado.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtclaveempleado.Enabled = True
@@ -99,6 +106,7 @@
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtclaveempleado.Enabled = False
+        txtclaveempleado.Text = False
         txtsexo.Text = ""
         txtnombre.Text = ""
         txtedad.Text = ""
@@ -106,7 +114,8 @@
         txtdireccion.Text = ""
         txtciudad.Text = ""
         txttelefono.Text = ""
-        txtdepartamento.Text = ""
+        'txtdepartamento.Text = ""
+        ComboBox1.SelectedValue = -1
         txtdate.Text = ""
         btnGuardar.Enabled = True
         btnEliminar.Enabled = False
@@ -128,5 +137,20 @@
         btnmodificar.Enabled = True
         btnAlta.Enabled = True
         Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
+    End Sub
+
+    Private Sub LlenarCombo()
+        Conexion = New OleDb.OleDbConnection
+        Conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\SuperTienda.accdb"
+        Conexion.Open()
+        Dim da As New OleDb.OleDbDataAdapter("select * from Departamentos", Conexion)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        If ds.Tables(0).Rows.Count > 0 Then
+            ComboBox1.DataSource = ds.Tables(0)
+            ComboBox1.DisplayMember = "Departamento"
+            ComboBox1.ValueMember = "Id Departamento"
+            ComboBox1.SelectedIndex = -1
+        End If
     End Sub
 End Class

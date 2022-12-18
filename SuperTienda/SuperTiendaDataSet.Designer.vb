@@ -5652,17 +5652,14 @@ Namespace SuperTiendaDataSetTableAdapters
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "INSERT INTO Promociones"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Deparmento, Promoción, Product"& _ 
-                "o, [Precio unitario], Cantidad, Subtotal, Descuento, Total)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (?, ?"& _ 
-                ", ?, ?, ?, ?, ?, ?)"
+                "o, [Precio unitario], Cantidad, Descuento)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (?, ?, ?, ?, ?, ?)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Deparmento", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Deparmento", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Promoción", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Promoción", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Producto", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Producto", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Precio_unitario", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(19,Byte), CType(0,Byte), "Precio unitario", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cantidad", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Subtotal", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(19,Byte), CType(0,Byte), "Subtotal", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Descuento", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(19,Byte), CType(0,Byte), "Descuento", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(19,Byte), CType(0,Byte), "Total", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6128,7 +6125,7 @@ Namespace SuperTiendaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function INSERTAR(ByVal Deparmento As String, ByVal Promoción As String, ByVal Producto As String, ByVal Precio_unitario As Global.System.Nullable(Of Decimal), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Subtotal As Global.System.Nullable(Of Decimal), ByVal Descuento As Global.System.Nullable(Of Decimal), ByVal Total As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overloads Overridable Function INSERTAR(ByVal Deparmento As String, ByVal Promoción As String, ByVal Producto As String, ByVal Precio_unitario As Global.System.Nullable(Of Decimal), ByVal Cantidad As Global.System.Nullable(Of Integer), ByVal Descuento As Global.System.Nullable(Of Decimal)) As Integer
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(4)
             If (Deparmento Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -6155,20 +6152,10 @@ Namespace SuperTiendaDataSetTableAdapters
             Else
                 command.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Subtotal.HasValue = true) Then
-                command.Parameters(5).Value = CType(Subtotal.Value,Decimal)
+            If (Descuento.HasValue = true) Then
+                command.Parameters(5).Value = CType(Descuento.Value,Decimal)
             Else
                 command.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (Descuento.HasValue = true) Then
-                command.Parameters(6).Value = CType(Descuento.Value,Decimal)
-            Else
-                command.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Total.HasValue = true) Then
-                command.Parameters(7).Value = CType(Total.Value,Decimal)
-            Else
-                command.Parameters(7).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

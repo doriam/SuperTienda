@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmPrincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnDepartamentos = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
@@ -41,7 +41,6 @@ Partial Class frmPrincipal
         Me.AquíLaRegistramosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformateDeNuestrasPromiocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnVolver = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -109,7 +108,7 @@ Partial Class frmPrincipal
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(361, 626)
+        Me.btnSalir.Location = New System.Drawing.Point(188, 629)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(264, 66)
@@ -219,20 +218,6 @@ Partial Class frmPrincipal
         Me.InformateDeNuestrasPromiocionesToolStripMenuItem.Size = New System.Drawing.Size(312, 26)
         Me.InformateDeNuestrasPromiocionesToolStripMenuItem.Text = "Informate de nuestras promociones"
         '
-        'btnVolver
-        '
-        Me.btnVolver.BackColor = System.Drawing.SystemColors.Control
-        Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnVolver.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVolver.Location = New System.Drawing.Point(16, 626)
-        Me.btnVolver.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(264, 66)
-        Me.btnVolver.TabIndex = 15
-        Me.btnVolver.Text = "VOLVER"
-        Me.btnVolver.UseVisualStyleBackColor = False
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -241,7 +226,6 @@ Partial Class frmPrincipal
         Me.ClientSize = New System.Drawing.Size(641, 708)
         Me.Controls.Add(Me.btnpromociones)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnVentas)
         Me.Controls.Add(Me.btnEmpleados)
         Me.Controls.Add(Me.btnInventario)
@@ -250,6 +234,7 @@ Partial Class frmPrincipal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventana principal"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -276,5 +261,4 @@ Partial Class frmPrincipal
     Friend WithEvents RealizaTuCompraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AquíLaRegistramosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InformateDeNuestrasPromiocionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents btnVolver As System.Windows.Forms.Button
 End Class

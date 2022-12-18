@@ -61,9 +61,9 @@ Partial Class frmEmpleados
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtciudad = New System.Windows.Forms.TextBox()
         Me.txttelefono = New System.Windows.Forms.TextBox()
-        Me.txtdepartamento = New System.Windows.Forms.TextBox()
         Me.txtdate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -353,7 +353,7 @@ Partial Class frmEmpleados
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(949, 891)
+        Me.btnSalir.Location = New System.Drawing.Point(943, 826)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(221, 66)
@@ -367,7 +367,7 @@ Partial Class frmEmpleados
         Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnVolver.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVolver.Location = New System.Drawing.Point(179, 891)
+        Me.btnVolver.Location = New System.Drawing.Point(173, 826)
         Me.btnVolver.Margin = New System.Windows.Forms.Padding(4)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(221, 66)
@@ -455,16 +455,6 @@ Partial Class frmEmpleados
         Me.txttelefono.Size = New System.Drawing.Size(473, 38)
         Me.txttelefono.TabIndex = 59
         '
-        'txtdepartamento
-        '
-        Me.txtdepartamento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Departamento", True))
-        Me.txtdepartamento.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.txtdepartamento.Location = New System.Drawing.Point(312, 412)
-        Me.txtdepartamento.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtdepartamento.Name = "txtdepartamento"
-        Me.txtdepartamento.Size = New System.Drawing.Size(473, 38)
-        Me.txtdepartamento.TabIndex = 61
-        '
         'txtdate
         '
         Me.txtdate.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmpleadosBindingSource, "Fecha de contratación", True))
@@ -478,11 +468,11 @@ Partial Class frmEmpleados
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Fecha_de_contrataciónLabel)
         Me.GroupBox1.Controls.Add(Clave_de_empleadoLabel)
         Me.GroupBox1.Controls.Add(Me.txtdate)
         Me.GroupBox1.Controls.Add(Me.txtclaveempleado)
-        Me.GroupBox1.Controls.Add(Me.txtdepartamento)
         Me.GroupBox1.Controls.Add(SexoLabel)
         Me.GroupBox1.Controls.Add(DepartamentoLabel)
         Me.GroupBox1.Controls.Add(Me.txtsexo)
@@ -500,7 +490,7 @@ Partial Class frmEmpleados
         Me.GroupBox1.Controls.Add(Me.txtestado)
         Me.GroupBox1.Font = New System.Drawing.Font("Gill Sans MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(36, 182)
+        Me.GroupBox1.Location = New System.Drawing.Point(30, 117)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
@@ -509,13 +499,22 @@ Partial Class frmEmpleados
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de empleados"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Gill Sans MT", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(312, 410)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(473, 42)
+        Me.ComboBox1.TabIndex = 77
+        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.SystemColors.Control
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnBuscar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnBuscar.Location = New System.Drawing.Point(1121, 539)
+        Me.btnBuscar.Location = New System.Drawing.Point(1115, 474)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(212, 64)
@@ -529,7 +528,7 @@ Partial Class frmEmpleados
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEliminar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnEliminar.Location = New System.Drawing.Point(887, 539)
+        Me.btnEliminar.Location = New System.Drawing.Point(881, 474)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(212, 64)
@@ -543,7 +542,7 @@ Partial Class frmEmpleados
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnGuardar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnGuardar.Location = New System.Drawing.Point(887, 226)
+        Me.btnGuardar.Location = New System.Drawing.Point(881, 161)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(446, 64)
@@ -558,7 +557,7 @@ Partial Class frmEmpleados
         Me.EmpleadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.EmpleadosDataGridView.DataSource = Me.EmpleadosBindingSource
-        Me.EmpleadosDataGridView.Location = New System.Drawing.Point(36, 715)
+        Me.EmpleadosDataGridView.Location = New System.Drawing.Point(30, 650)
         Me.EmpleadosDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.EmpleadosDataGridView.Name = "EmpleadosDataGridView"
         Me.EmpleadosDataGridView.RowHeadersWidth = 51
@@ -648,12 +647,12 @@ Partial Class frmEmpleados
         'lblempleado
         '
         Me.lblempleado.BackColor = System.Drawing.Color.Transparent
-        Me.lblempleado.Font = New System.Drawing.Font("Comic Sans MS", 48.0!)
+        Me.lblempleado.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblempleado.ForeColor = System.Drawing.Color.Black
-        Me.lblempleado.Location = New System.Drawing.Point(489, 59)
+        Me.lblempleado.Location = New System.Drawing.Point(489, 46)
         Me.lblempleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblempleado.Name = "lblempleado"
-        Me.lblempleado.Size = New System.Drawing.Size(513, 110)
+        Me.lblempleado.Size = New System.Drawing.Size(513, 54)
         Me.lblempleado.TabIndex = 72
         Me.lblempleado.Text = "Empleados"
         Me.lblempleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -664,7 +663,7 @@ Partial Class frmEmpleados
         Me.btnmodificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnmodificar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnmodificar.Location = New System.Drawing.Point(1121, 433)
+        Me.btnmodificar.Location = New System.Drawing.Point(1115, 368)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(212, 64)
@@ -678,7 +677,7 @@ Partial Class frmEmpleados
         Me.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnAlta.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnAlta.Location = New System.Drawing.Point(887, 433)
+        Me.btnAlta.Location = New System.Drawing.Point(881, 368)
         Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(212, 64)
@@ -692,7 +691,7 @@ Partial Class frmEmpleados
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnCancelar.Location = New System.Drawing.Point(887, 328)
+        Me.btnCancelar.Location = New System.Drawing.Point(881, 263)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(446, 64)
@@ -720,6 +719,7 @@ Partial Class frmEmpleados
         Me.Controls.Add(Me.EmpleadosBindingNavigator)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Datos empleados"
         CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -760,7 +760,6 @@ Partial Class frmEmpleados
     Friend WithEvents txtdireccion As System.Windows.Forms.TextBox
     Friend WithEvents txtciudad As System.Windows.Forms.TextBox
     Friend WithEvents txttelefono As System.Windows.Forms.TextBox
-    Friend WithEvents txtdepartamento As System.Windows.Forms.TextBox
     Friend WithEvents txtdate As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
@@ -781,4 +780,5 @@ Partial Class frmEmpleados
     Friend WithEvents btnmodificar As System.Windows.Forms.Button
     Friend WithEvents btnAlta As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

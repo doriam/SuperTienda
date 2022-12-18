@@ -1,10 +1,5 @@
 ﻿Public Class frmPrincipal
 
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Me.Visible = False
-        My.Forms.frmUsuario.Visible = True
-    End Sub
-
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         End
     End Sub

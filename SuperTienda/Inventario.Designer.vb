@@ -210,7 +210,7 @@ Partial Class frmInventario
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(608, 798)
+        Me.btnSalir.Location = New System.Drawing.Point(603, 726)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(264, 50)
@@ -224,7 +224,7 @@ Partial Class frmInventario
         Me.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnVolver.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVolver.Location = New System.Drawing.Point(263, 798)
+        Me.btnVolver.Location = New System.Drawing.Point(258, 726)
         Me.btnVolver.Margin = New System.Windows.Forms.Padding(4)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(264, 50)
@@ -247,7 +247,7 @@ Partial Class frmInventario
         Me.InventarioBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.InventarioBindingNavigator.Name = "InventarioBindingNavigator"
         Me.InventarioBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 31)
+        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 27)
         Me.InventarioBindingNavigator.TabIndex = 19
         Me.InventarioBindingNavigator.Text = "BindingNavigator1"
         '
@@ -257,7 +257,7 @@ Partial Class frmInventario
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
         'InventarioBindingSource
@@ -441,7 +441,7 @@ Partial Class frmInventario
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnGuardar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnGuardar.Location = New System.Drawing.Point(700, 191)
+        Me.btnGuardar.Location = New System.Drawing.Point(695, 154)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(411, 59)
@@ -455,7 +455,7 @@ Partial Class frmInventario
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEliminar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnEliminar.Location = New System.Drawing.Point(700, 450)
+        Me.btnEliminar.Location = New System.Drawing.Point(695, 413)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(192, 60)
@@ -469,7 +469,7 @@ Partial Class frmInventario
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnBuscar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnBuscar.Location = New System.Drawing.Point(919, 450)
+        Me.btnBuscar.Location = New System.Drawing.Point(914, 413)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(192, 60)
@@ -484,7 +484,7 @@ Partial Class frmInventario
         Me.InventarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.InventarioDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.InventarioDataGridView.DataSource = Me.InventarioBindingSource
-        Me.InventarioDataGridView.Location = New System.Drawing.Point(17, 624)
+        Me.InventarioDataGridView.Location = New System.Drawing.Point(12, 552)
         Me.InventarioDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.InventarioDataGridView.Name = "InventarioDataGridView"
         Me.InventarioDataGridView.RowHeadersWidth = 51
@@ -572,12 +572,12 @@ Partial Class frmInventario
         'lbldepa
         '
         Me.lbldepa.BackColor = System.Drawing.Color.Transparent
-        Me.lbldepa.Font = New System.Drawing.Font("Comic Sans MS", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbldepa.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbldepa.ForeColor = System.Drawing.Color.Black
         Me.lbldepa.Location = New System.Drawing.Point(270, 42)
         Me.lbldepa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldepa.Name = "lbldepa"
-        Me.lbldepa.Size = New System.Drawing.Size(700, 86)
+        Me.lbldepa.Size = New System.Drawing.Size(700, 61)
         Me.lbldepa.TabIndex = 50
         Me.lbldepa.Text = "Inventario"
         Me.lbldepa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -588,7 +588,7 @@ Partial Class frmInventario
         Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnModificar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnModificar.Location = New System.Drawing.Point(919, 356)
+        Me.btnModificar.Location = New System.Drawing.Point(914, 319)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(192, 60)
@@ -602,7 +602,7 @@ Partial Class frmInventario
         Me.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnAlta.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnAlta.Location = New System.Drawing.Point(700, 356)
+        Me.btnAlta.Location = New System.Drawing.Point(695, 319)
         Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(192, 60)
@@ -628,8 +628,8 @@ Partial Class frmInventario
         Me.GroupBox1.Controls.Add(Me.txtexistencia)
         Me.GroupBox1.Controls.Add(FechaLabel)
         Me.GroupBox1.Controls.Add(Me.txtfecha)
-        Me.GroupBox1.Font = New System.Drawing.Font("Gill Sans MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(17, 151)
+        Me.GroupBox1.Font = New System.Drawing.Font("Gill Sans MT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 114)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(664, 407)
         Me.GroupBox1.TabIndex = 77
@@ -642,7 +642,7 @@ Partial Class frmInventario
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnCancelar.Location = New System.Drawing.Point(700, 265)
+        Me.btnCancelar.Location = New System.Drawing.Point(695, 228)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(411, 59)
@@ -655,7 +655,7 @@ Partial Class frmInventario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1163, 869)
+        Me.ClientSize = New System.Drawing.Size(1163, 797)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnAlta)
@@ -671,6 +671,7 @@ Partial Class frmInventario
         Me.ForeColor = System.Drawing.Color.Black
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmInventario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventario"
         CType(Me.InventarioBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.InventarioBindingNavigator.ResumeLayout(False)
