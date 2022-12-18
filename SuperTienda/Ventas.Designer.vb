@@ -23,7 +23,7 @@ Partial Class frmVentas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
@@ -44,7 +44,6 @@ Partial Class frmVentas
         Me.SuperTiendaDataSet = New WindowsApplication1.SuperTiendaDataSet()
         Me.InventarioTableAdapter = New WindowsApplication1.SuperTiendaDataSetTableAdapters.InventarioTableAdapter()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
-        Me.lblcantidad = New System.Windows.Forms.Label()
         Me.listcuenta = New System.Windows.Forms.ListBox()
         Me.lbltootal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -56,6 +55,10 @@ Partial Class frmVentas
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.gridInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,12 +109,11 @@ Partial Class frmVentas
         Me.lblprecio.BackColor = System.Drawing.Color.Transparent
         Me.lblprecio.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lblprecio.ForeColor = System.Drawing.Color.Black
-        Me.lblprecio.Location = New System.Drawing.Point(536, 319)
+        Me.lblprecio.Location = New System.Drawing.Point(644, 315)
         Me.lblprecio.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblprecio.Name = "lblprecio"
-        Me.lblprecio.Size = New System.Drawing.Size(117, 38)
+        Me.lblprecio.Size = New System.Drawing.Size(0, 38)
         Me.lblprecio.TabIndex = 21
-        Me.lblprecio.Text = "Precio: &$"
         '
         'lbldescrip
         '
@@ -119,12 +121,11 @@ Partial Class frmVentas
         Me.lbldescrip.BackColor = System.Drawing.Color.Transparent
         Me.lbldescrip.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lbldescrip.ForeColor = System.Drawing.Color.Black
-        Me.lbldescrip.Location = New System.Drawing.Point(10, 320)
+        Me.lbldescrip.Location = New System.Drawing.Point(139, 315)
         Me.lbldescrip.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lbldescrip.Name = "lbldescrip"
-        Me.lbldescrip.Size = New System.Drawing.Size(303, 38)
+        Me.lbldescrip.Size = New System.Drawing.Size(0, 38)
         Me.lbldescrip.TabIndex = 20
-        Me.lbldescrip.Text = "Descripción del producto"
         '
         'txtseleccion
         '
@@ -141,12 +142,11 @@ Partial Class frmVentas
         Me.lblsubtotal.BackColor = System.Drawing.Color.Transparent
         Me.lblsubtotal.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
         Me.lblsubtotal.ForeColor = System.Drawing.Color.Black
-        Me.lblsubtotal.Location = New System.Drawing.Point(1089, 320)
+        Me.lblsubtotal.Location = New System.Drawing.Point(1252, 315)
         Me.lblsubtotal.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblsubtotal.Name = "lblsubtotal"
-        Me.lblsubtotal.Size = New System.Drawing.Size(108, 38)
+        Me.lblsubtotal.Size = New System.Drawing.Size(0, 38)
         Me.lblsubtotal.TabIndex = 23
-        Me.lblsubtotal.Text = "Subtotal"
         '
         'gridInventario
         '
@@ -155,14 +155,14 @@ Partial Class frmVentas
         Me.gridInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridInventario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDepartamentoDataGridViewTextBoxColumn, Me.DepartamentoDataGridViewTextBoxColumn, Me.ClaveDelProductoDataGridViewTextBoxColumn, Me.DescripciónDataGridViewTextBoxColumn, Me.PrecioDeCompraDataGridViewTextBoxColumn, Me.PrecioDeVentaDataGridViewTextBoxColumn, Me.ExistenciaDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn})
         Me.gridInventario.DataSource = Me.InventarioBindingSource
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gridInventario.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gridInventario.DefaultCellStyle = DataGridViewCellStyle6
         Me.gridInventario.Location = New System.Drawing.Point(10, 429)
         Me.gridInventario.Margin = New System.Windows.Forms.Padding(4)
         Me.gridInventario.Name = "gridInventario"
@@ -262,26 +262,14 @@ Partial Class frmVentas
         Me.btnSeleccionar.Text = "SELECCIONAR"
         Me.btnSeleccionar.UseVisualStyleBackColor = False
         '
-        'lblcantidad
-        '
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.BackColor = System.Drawing.Color.Transparent
-        Me.lblcantidad.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.lblcantidad.ForeColor = System.Drawing.Color.Black
-        Me.lblcantidad.Location = New System.Drawing.Point(753, 316)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(139, 38)
-        Me.lblcantidad.TabIndex = 26
-        Me.lblcantidad.Text = "Cantidad:&#"
-        '
         'listcuenta
         '
         Me.listcuenta.FormattingEnabled = True
         Me.listcuenta.ItemHeight = 16
-        Me.listcuenta.Items.AddRange(New Object() {"Artículo " & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Precio" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Cantidad" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Subtotal"})
+        Me.listcuenta.Items.AddRange(New Object() {"Producto" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Precio" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "    Cantidad" & Global.Microsoft.VisualBasic.ChrW(9) & "    Subtotal"})
         Me.listcuenta.Location = New System.Drawing.Point(912, 486)
         Me.listcuenta.Margin = New System.Windows.Forms.Padding(4)
+        Me.listcuenta.MultiColumn = True
         Me.listcuenta.Name = "listcuenta"
         Me.listcuenta.Size = New System.Drawing.Size(601, 196)
         Me.listcuenta.TabIndex = 27
@@ -419,12 +407,70 @@ Partial Class frmVentas
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "VENTAS"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(517, 315)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(117, 38)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Precio: $"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(777, 315)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(123, 38)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "Cantidad:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(14, 315)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(127, 38)
+        Me.Label4.TabIndex = 40
+        Me.Label4.Text = "Producto:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(1105, 315)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(137, 38)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "Subtotal: $"
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1533, 817)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -436,7 +482,6 @@ Partial Class frmVentas
         Me.Controls.Add(Me.lbltootal)
         Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.listcuenta)
-        Me.Controls.Add(Me.lblcantidad)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.gridInventario)
         Me.Controls.Add(Me.lblsubtotal)
@@ -479,7 +524,6 @@ Partial Class frmVentas
     Friend WithEvents ExistenciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnSeleccionar As System.Windows.Forms.Button
-    Friend WithEvents lblcantidad As System.Windows.Forms.Label
     Friend WithEvents listcuenta As System.Windows.Forms.ListBox
     Friend WithEvents lbltootal As System.Windows.Forms.Label
     Friend WithEvents lbltotal As System.Windows.Forms.Label
@@ -491,4 +535,8 @@ Partial Class frmVentas
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

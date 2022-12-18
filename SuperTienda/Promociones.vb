@@ -60,7 +60,7 @@
                 total = subtotal * descuento
                 txttotal.Text = total
 
-                Me.PromocionesTableAdapter.INSERTAR(ComboBox1.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text)
+                Me.PromocionesTableAdapter.INSERTAR(cboDepto.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text)
                 Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -93,7 +93,7 @@
                 descuento = txtdescuento.Text
                 total = subtotal * descuento
                 txttotal.Text = total
-                Me.PromocionesTableAdapter.ACTUALIZAR(ComboBox1.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text, txtid.Text)
+                Me.PromocionesTableAdapter.ACTUALIZAR(cboDepto.Text, txtpromo.Text, txtproducto.Text, txtpreciounitario.Text, txtcantidad.Text, txtdescuento.Text, txtid.Text)
                 Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtid.Enabled = True
@@ -147,7 +147,7 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         txtid.Enabled = False
         txtcantidad.Enabled = True
-        ComboBox1.Enabled = True
+        cboDepto.Enabled = True
         txtdescuento.Enabled = True
         txtpreciounitario.Enabled = True
         txtproducto.Enabled = True
@@ -166,7 +166,7 @@
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtid.Enabled = True
         txtcantidad.Text = ""
-        ComboBox1.SelectedValue = -1
+        cboDepto.SelectedValue = -1
         txtdescuento.Text = ""
         txtpreciounitario.Text = ""
         txtproducto.Text = ""
@@ -200,10 +200,10 @@
         Dim ds As New DataSet
         da.Fill(ds)
         If ds.Tables(0).Rows.Count > 0 Then
-            ComboBox1.DataSource = ds.Tables(0)
-            ComboBox1.DisplayMember = "Departamento"
-            ComboBox1.ValueMember = "Id Departamento"
-            ComboBox1.SelectedIndex = -1
+            cboDepto.DataSource = ds.Tables(0)
+            cboDepto.DisplayMember = "Departamento"
+            cboDepto.ValueMember = "Id Departamento"
+            cboDepto.SelectedIndex = -1
         End If
     End Sub
 End Class

@@ -106,6 +106,7 @@ Public Class frmDepartamentos
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtdepartamento.Text = ""
         txtiddep.Enabled = False
+        txtiddep.Text = ""
         btnGuardar.Enabled = True
         btnEliminar.Enabled = False
         btnBuscar.Enabled = False

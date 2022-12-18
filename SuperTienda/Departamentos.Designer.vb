@@ -275,7 +275,7 @@ Partial Class frmDepartamentos
         Me.gridDepartamentos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDepartamentoDataGridViewTextBoxColumn, Me.DepartamentoDataGridViewTextBoxColumn})
         Me.gridDepartamentos.DataSource = Me.DepartamentosBindingSource
         Me.gridDepartamentos.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.gridDepartamentos.Location = New System.Drawing.Point(101, 330)
+        Me.gridDepartamentos.Location = New System.Drawing.Point(41, 330)
         Me.gridDepartamentos.Margin = New System.Windows.Forms.Padding(4)
         Me.gridDepartamentos.Name = "gridDepartamentos"
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -287,7 +287,7 @@ Partial Class frmDepartamentos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.gridDepartamentos.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.gridDepartamentos.RowHeadersWidth = 51
-        Me.gridDepartamentos.Size = New System.Drawing.Size(385, 156)
+        Me.gridDepartamentos.Size = New System.Drawing.Size(445, 156)
         Me.gridDepartamentos.TabIndex = 23
         '
         'IdDepartamentoDataGridViewTextBoxColumn
@@ -315,7 +315,7 @@ Partial Class frmDepartamentos
         Me.btnBuscar.Location = New System.Drawing.Point(788, 424)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(192, 60)
+        Me.btnBuscar.Size = New System.Drawing.Size(192, 62)
         Me.btnBuscar.TabIndex = 45
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
@@ -375,7 +375,7 @@ Partial Class frmDepartamentos
         Me.btnModificar.Location = New System.Drawing.Point(788, 344)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(192, 60)
+        Me.btnModificar.Size = New System.Drawing.Size(192, 72)
         Me.btnModificar.TabIndex = 50
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
@@ -389,7 +389,7 @@ Partial Class frmDepartamentos
         Me.btnAlta.Location = New System.Drawing.Point(588, 344)
         Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(192, 60)
+        Me.btnAlta.Size = New System.Drawing.Size(192, 72)
         Me.btnAlta.TabIndex = 51
         Me.btnAlta.Text = "Alta de registros"
         Me.btnAlta.UseVisualStyleBackColor = False
@@ -430,6 +430,8 @@ Partial Class frmDepartamentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(995, 631)
         Me.Controls.Add(Me.btnCancelar)

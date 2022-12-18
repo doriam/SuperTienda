@@ -36,7 +36,7 @@ Public Class frmEmpleados
         If eliminar = 2 Then
             respuesta = MsgBox("¿Está seguro de borrar este dato?", vbQuestion + vbYesNo + vbDefaultButton2, "Eliminar empleado")
             If respuesta = vbYes Then
-                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text)
+                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, cboDepto.Text, txtdate.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Se ha eliminado con éxito el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 eliminar = 1
@@ -54,7 +54,7 @@ Public Class frmEmpleados
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If up = False Then
             Try
-                Me.EmpleadosTableAdapter.Insert(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text)
+                Me.EmpleadosTableAdapter.Insert(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, cboDepto.Text, txtdate.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -64,7 +64,7 @@ Public Class frmEmpleados
 
         Else
             Try
-                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, ComboBox1.Text, txtdate.Text, txtclaveempleado.Text)
+                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, cboDepto.Text, txtdate.Text, txtclaveempleado.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtclaveempleado.Enabled = True
@@ -106,7 +106,7 @@ Public Class frmEmpleados
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtclaveempleado.Enabled = False
-        txtclaveempleado.Text = False
+        txtclaveempleado.Text = ""
         txtsexo.Text = ""
         txtnombre.Text = ""
         txtedad.Text = ""
@@ -115,7 +115,7 @@ Public Class frmEmpleados
         txtciudad.Text = ""
         txttelefono.Text = ""
         'txtdepartamento.Text = ""
-        ComboBox1.SelectedValue = -1
+        cboDepto.SelectedValue = -1
         txtdate.Text = ""
         btnGuardar.Enabled = True
         btnEliminar.Enabled = False
@@ -147,10 +147,10 @@ Public Class frmEmpleados
         Dim ds As New DataSet
         da.Fill(ds)
         If ds.Tables(0).Rows.Count > 0 Then
-            ComboBox1.DataSource = ds.Tables(0)
-            ComboBox1.DisplayMember = "Departamento"
-            ComboBox1.ValueMember = "Id Departamento"
-            ComboBox1.SelectedIndex = -1
+            cboDepto.DataSource = ds.Tables(0)
+            cboDepto.DisplayMember = "Departamento"
+            cboDepto.ValueMember = "Id Departamento"
+            cboDepto.SelectedIndex = -1
         End If
     End Sub
 End Class

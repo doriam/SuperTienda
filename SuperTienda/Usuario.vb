@@ -1,25 +1,26 @@
 ﻿Imports System.Data
 Imports System.Data.OleDb
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
 Public Class frmUsuario
+    Dim Conexion As OleDb.OleDbConnection
 
     'A actualizar
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
-        Dim usuario, contraseña As String
-        Dim consulta As String
-        consulta = "SELECT*FROM Usuarios WHERE Usuario='" & cboUsuario.Text & "' Contraseña='" & txtcontraseña.Text
-        usuario = cboUsuario.Text
-        contraseña = txtcontraseña.Text
-        If txtcontraseña.Text = "" Then
+        Conexion = New OleDb.OleDbConnection
+        Conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\SuperTienda.accdb"
+        Conexion.Open()
+        Dim da As New OleDb.OleDbDataAdapter("select * from Usuarios WHERE Usuario='" & cboUsuario.Text & "' AND Contraseña='" & txtcontraseña.Text & "'", Conexion)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        If ds.Tables(0).Rows.Count > 0 Then
+            MessageBox.Show("Bienvenido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Visible = False
+            My.Forms.frmPrincipal.Visible = True
+        Else
             MessageBox.Show("Usuario o contraseña incorrecta, intente de nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
             cboUsuario.Text = ""
             txtcontraseña.Text = ""
-            Me.Visible = True
-        End If
-        If usuario = (cboUsuario.Text) And contraseña = txtcontraseña.Text Then
-            MessageBox.Show("Bienvenido a la Base de datos de el negocio: Super Tienda." & " " & usuario, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Visible = False
-            My.Forms.frmPrincipal.Visible = True
-
         End If
     End Sub
     Private Sub frmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load

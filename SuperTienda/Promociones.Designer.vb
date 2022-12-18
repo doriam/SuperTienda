@@ -79,7 +79,7 @@ Partial Class frmPromociones
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboDepto = New System.Windows.Forms.ComboBox()
         Id_de_promociónLabel = New System.Windows.Forms.Label()
         DeparmentoLabel = New System.Windows.Forms.Label()
         PromociónLabel = New System.Windows.Forms.Label()
@@ -211,7 +211,7 @@ Partial Class frmPromociones
         Me.PromocionesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.PromocionesBindingNavigator.Name = "PromocionesBindingNavigator"
         Me.PromocionesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PromocionesBindingNavigator.Size = New System.Drawing.Size(1125, 27)
+        Me.PromocionesBindingNavigator.Size = New System.Drawing.Size(1125, 31)
         Me.PromocionesBindingNavigator.TabIndex = 0
         Me.PromocionesBindingNavigator.Text = "BindingNavigator1"
         '
@@ -221,7 +221,7 @@ Partial Class frmPromociones
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
         'PromocionesBindingSource
@@ -237,7 +237,7 @@ Partial Class frmPromociones
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(48, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(48, 28)
         Me.BindingNavigatorCountItem.Text = "de {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
         '
@@ -247,7 +247,7 @@ Partial Class frmPromociones
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
@@ -256,7 +256,7 @@ Partial Class frmPromociones
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
         '
         'BindingNavigatorMovePreviousItem
@@ -265,13 +265,13 @@ Partial Class frmPromociones
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorPositionItem
         '
@@ -286,7 +286,7 @@ Partial Class frmPromociones
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -294,7 +294,7 @@ Partial Class frmPromociones
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
         '
         'BindingNavigatorMoveLastItem
@@ -303,20 +303,20 @@ Partial Class frmPromociones
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorMoveLastItem.Text = "Mover último"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
         '
         'PromocionesBindingNavigatorSaveItem
         '
         Me.PromocionesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.PromocionesBindingNavigatorSaveItem.Image = CType(resources.GetObject("PromocionesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.PromocionesBindingNavigatorSaveItem.Name = "PromocionesBindingNavigatorSaveItem"
-        Me.PromocionesBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.PromocionesBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
         Me.PromocionesBindingNavigatorSaveItem.Text = "Guardar datos"
         '
         'txtid
@@ -516,7 +516,7 @@ Partial Class frmPromociones
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.cboDepto)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(DeparmentoLabel)
         Me.GroupBox1.Controls.Add(Me.txttotal)
@@ -669,18 +669,20 @@ Partial Class frmPromociones
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'cboDepto
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(239, 81)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(289, 43)
-        Me.ComboBox1.TabIndex = 79
+        Me.cboDepto.FormattingEnabled = True
+        Me.cboDepto.Location = New System.Drawing.Point(239, 81)
+        Me.cboDepto.Name = "cboDepto"
+        Me.cboDepto.Size = New System.Drawing.Size(289, 43)
+        Me.cboDepto.TabIndex = 79
         '
         'frmPromociones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1125, 839)
         Me.Controls.Add(Me.btnCancelar)
@@ -757,5 +759,5 @@ Partial Class frmPromociones
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnAlta As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboDepto As ComboBox
 End Class

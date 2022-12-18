@@ -50,7 +50,7 @@ Partial Class frmPrincipal
         Me.btnDepartamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnDepartamentos.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnDepartamentos.Location = New System.Drawing.Point(188, 118)
+        Me.btnDepartamentos.Location = New System.Drawing.Point(190, 68)
         Me.btnDepartamentos.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDepartamentos.Name = "btnDepartamentos"
         Me.btnDepartamentos.Size = New System.Drawing.Size(264, 66)
@@ -65,7 +65,7 @@ Partial Class frmPrincipal
         Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnInventario.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnInventario.Location = New System.Drawing.Point(188, 204)
+        Me.btnInventario.Location = New System.Drawing.Point(190, 142)
         Me.btnInventario.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(264, 66)
@@ -80,7 +80,7 @@ Partial Class frmPrincipal
         Me.btnEmpleados.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
         Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnEmpleados.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnEmpleados.Location = New System.Drawing.Point(188, 295)
+        Me.btnEmpleados.Location = New System.Drawing.Point(190, 216)
         Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEmpleados.Name = "btnEmpleados"
         Me.btnEmpleados.Size = New System.Drawing.Size(264, 66)
@@ -94,7 +94,7 @@ Partial Class frmPrincipal
         Me.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnVentas.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnVentas.Location = New System.Drawing.Point(188, 472)
+        Me.btnVentas.Location = New System.Drawing.Point(190, 364)
         Me.btnVentas.Margin = New System.Windows.Forms.Padding(4)
         Me.btnVentas.Name = "btnVentas"
         Me.btnVentas.Size = New System.Drawing.Size(264, 66)
@@ -108,7 +108,7 @@ Partial Class frmPrincipal
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnSalir.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnSalir.Location = New System.Drawing.Point(188, 629)
+        Me.btnSalir.Location = New System.Drawing.Point(190, 486)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(264, 66)
@@ -122,7 +122,7 @@ Partial Class frmPrincipal
         Me.btnpromociones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnpromociones.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnpromociones.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnpromociones.Location = New System.Drawing.Point(188, 383)
+        Me.btnpromociones.Location = New System.Drawing.Point(190, 290)
         Me.btnpromociones.Margin = New System.Windows.Forms.Padding(4)
         Me.btnpromociones.Name = "btnpromociones"
         Me.btnpromociones.Size = New System.Drawing.Size(264, 66)
@@ -222,8 +222,9 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(641, 708)
+        Me.ClientSize = New System.Drawing.Size(641, 582)
         Me.Controls.Add(Me.btnpromociones)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnVentas)

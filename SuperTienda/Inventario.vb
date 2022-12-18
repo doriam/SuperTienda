@@ -106,6 +106,7 @@
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtiddepa.Text = ""
         txtdepa.Text = ""
+        txtclaveproducto.Text = ""
         txtdescripcion.Text = ""
         txtpreciocompra.Text = ""
         txtprecioventa.Text = ""

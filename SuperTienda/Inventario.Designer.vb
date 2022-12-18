@@ -247,7 +247,7 @@ Partial Class frmInventario
         Me.InventarioBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.InventarioBindingNavigator.Name = "InventarioBindingNavigator"
         Me.InventarioBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 27)
+        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 31)
         Me.InventarioBindingNavigator.TabIndex = 19
         Me.InventarioBindingNavigator.Text = "BindingNavigator1"
         '
@@ -257,7 +257,7 @@ Partial Class frmInventario
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
         'InventarioBindingSource
@@ -654,6 +654,8 @@ Partial Class frmInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1163, 797)
         Me.Controls.Add(Me.btnCancelar)

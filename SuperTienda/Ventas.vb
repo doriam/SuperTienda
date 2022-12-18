@@ -5,6 +5,7 @@ Imports System.IO
 
 Public Class frmVentas
     Dim ruta = My.Computer.FileSystem.SpecialDirectories.Desktop & "\Venta.txt"
+    Dim counter = counter + 1
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         End
     End Sub
@@ -16,11 +17,9 @@ Public Class frmVentas
     Private Sub txtseleccion_TextChanged(sender As Object, e As EventArgs) Handles txtseleccion.TextChanged
         If Trim(txtseleccion.Text) = "" Then
             Me.InventarioBindingSource.RemoveFilter()
-            Me.gridInventario.Visible = False
         Else
             Me.InventarioBindingSource.Filter = "Descripción LIKE '*" &
                 Trim(txtseleccion.Text) & "%'"
-            Me.gridInventario.Visible = True
         End If
 
     End Sub
@@ -28,7 +27,9 @@ Public Class frmVentas
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'SuperTiendaDataSet.Inventario' Puede moverla o quitarla según sea necesario.
         Me.InventarioTableAdapter.Fill(Me.SuperTiendaDataSet.Inventario)
-      
+        btnagregar.Enabled = False
+        listcuenta.MultiColumn = True
+
     End Sub
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
@@ -40,7 +41,6 @@ Public Class frmVentas
         End With
         txtseleccion.Text = ""
         txtcantidad.Focus()
-
     End Sub
 
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
@@ -48,28 +48,23 @@ Public Class frmVentas
         Dim Insertar As String = "INSERT INTO ventas (lbldescrip.Text, txtcantidad.Text, lblprecio.Text, lblsubtotal.Text)"
         Dim Valores As String = "Values ( " & CStr(lblnumero.Text) & ", " & lbldescrip.Text & ", " & txtcantidad.Text & ", " & lblprecio.Text & ", " & lblsubtotal.Text & ")"
         Dim Cmd As New OleDbCommand(Insertar + Valores, DbConexion)
-        If txtcantidad.Text < 0 Then
-            listcuenta.Items.Add(lbldescrip.Text & "                " & lblprecio.Text & "                  " & txtcantidad.Text & "                " & lblsubtotal.Text & vbCrLf)
-            lbltotal.Text = txtcantidad.Text * lblprecio.Text
-        Else
-            listcuenta.Items.Add(lbldescrip.Text & "                " & lblprecio.Text & "                  " & txtcantidad.Text & "                " & lblsubtotal.Text & vbCrLf)
+
+
+        listcuenta.Items.Add(lbldescrip.Text & "                   " & lblprecio.Text & "                  " & txtcantidad.Text & "                " & lblsubtotal.Text & vbCrLf)
+        If lbltotal.Text <> "" Then
             lbltotal.Text = lbltotal.Text + (txtcantidad.Text * lblprecio.Text)
+        Else
+            lbltotal.Text = (txtcantidad.Text) * (lblprecio.Text)
         End If
         Cmd = Nothing
         DbConexion.Close()
-        lbldescrip.Text = "Artículo"
-        lblprecio.Text = "Precio"
+        lbldescrip.Text = ""
+        lblprecio.Text = ""
         txtcantidad.Text = ""
-        lblsubtotal.Text = "Subtotal"
+        lblsubtotal.Text = ""
     End Sub
 
     Private Sub txtcantidad_TextChanged(sender As Object, e As EventArgs) Handles txtcantidad.TextChanged
-        If txtcantidad.Text = "" Then
-            btnguardar.Enabled = False
-        Else
-            btnguardar.Enabled = True
-        End If
-
         If txtcantidad.Text = "" Then
             btnagregar.Enabled = False
         Else
@@ -79,7 +74,6 @@ Public Class frmVentas
         If IsNumeric(Trim(txtcantidad.Text)) Then
             lblsubtotal.Text = Format(txtcantidad.Text) * (lblprecio.Text)
         End If
-
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
@@ -87,17 +81,16 @@ Public Class frmVentas
         Try
             Dim rutaFichero As String
             Dim i As Integer
-
-            rutaFichero = Path.Combine(Application.StartupPath, "ventas.txt")
+            rutaFichero = Path.Combine(Application.StartupPath, "Venta.txt")
+            If Directory.Exists(rutaFichero) Then
+                rutaFichero = Path.Combine(Application.StartupPath, "Venta" + counter + ".txt")
+            End If
             Dim fichero As New IO.StreamWriter(rutaFichero)
             For i = 0 To listcuenta.Items.Count - 1
                 fichero.WriteLine(listcuenta.Items(i))
             Next
             fichero.Close()
-            lbldescrip.Text = "Artículo"
-            lblprecio.Text = "Precio"
             txtcantidad.Text = ""
-            lblsubtotal.Text = "Subtotal"
             listcuenta.Items.Clear()
             lbltotal.Text = ""
             MsgBox("Se ha guardado la venta con éxito", MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
@@ -109,10 +102,11 @@ Public Class frmVentas
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         MsgBox("¿Está seguro de cancelar la venta?", MsgBoxStyle.Information + MsgBoxStyle.YesNo)
         If vbYes Then
-            lbldescrip.Text = "Artículo"
-            lblprecio.Text = "Precio"
+            lbldescrip.Text = ""
+            lblprecio.Text = ""
+            lblsubtotal.Text = ""
+            'txtseleccion.Text = ""
             txtcantidad.Text = ""
-            lblsubtotal.Text = "Subtotal"
             listcuenta.Items.Clear()
             lbltotal.Text = ""
         End If
@@ -122,10 +116,7 @@ Public Class frmVentas
 
         MsgBox("¿Está seguro de iniciar una nueva venta? Esto borrará el contenido de la venta actual y no se guardará la información", MsgBoxStyle.Information + MsgBoxStyle.YesNo)
         If vbYes Then
-            lbldescrip.Text = "Artículo"
-            lblprecio.Text = "Precio"
             txtcantidad.Text = ""
-            lblsubtotal.Text = "Subtotal"
             listcuenta.Items.Clear()
         ElseIf vbNo Then
             btnNueva.Focus()
@@ -140,7 +131,4 @@ Public Class frmVentas
 
     End Sub
 
-    Private Sub listcuenta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listcuenta.SelectedIndexChanged
-
-    End Sub
 End Class
