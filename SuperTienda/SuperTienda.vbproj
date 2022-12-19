@@ -212,18 +212,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\empleados.png" />
-    <None Include="Resources\logo.jpg" />
-    <None Include="Resources\muebles+de+peluqueria+supertienda+marina+alta+alicante+espana__72A3F1_1.jpg" />
-    <None Include="Resources\st_impr1.jpg" />
-    <None Include="Resources\supertienda-logo-small.jpg" />
-    <None Include="Resources\candado.png" />
-    <None Include="Resources\Walmart-super_tienda-Torreon-nuevos_comercios-Jaime_Russek_MILIMA20140429_0776_8.jpg" />
-    <None Include="Resources\iconos-negocios-personal-468x458.jpg" />
-    <None Include="Resources\icons_club.png" />
-    <None Include="Resources\ventas_icono.png" />
-    <None Include="Resources\imagen-sales.jpg" />
-    <None Include="Resources\bienvenido %281%29.png" />
     <Content Include="SuperTienda.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

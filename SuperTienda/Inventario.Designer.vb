@@ -50,7 +50,6 @@ Partial Class frmInventario
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.InventarioBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.txtiddepa = New System.Windows.Forms.TextBox()
-        Me.txtdepa = New System.Windows.Forms.TextBox()
         Me.txtclaveproducto = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtpreciocompra = New System.Windows.Forms.TextBox()
@@ -76,6 +75,8 @@ Partial Class frmInventario
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.cboDepto = New System.Windows.Forms.ComboBox()
+        Me.txtdepa = New System.Windows.Forms.TextBox()
         Id_DepartamentoLabel = New System.Windows.Forms.Label()
         DepartamentoLabel = New System.Windows.Forms.Label()
         Clave_del_productoLabel = New System.Windows.Forms.Label()
@@ -98,7 +99,7 @@ Partial Class frmInventario
         Id_DepartamentoLabel.BackColor = System.Drawing.Color.Transparent
         Id_DepartamentoLabel.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Id_DepartamentoLabel.ForeColor = System.Drawing.Color.Black
-        Id_DepartamentoLabel.Location = New System.Drawing.Point(12, 40)
+        Id_DepartamentoLabel.Location = New System.Drawing.Point(12, 84)
         Id_DepartamentoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Id_DepartamentoLabel.Name = "Id_DepartamentoLabel"
         Id_DepartamentoLabel.Size = New System.Drawing.Size(189, 34)
@@ -112,7 +113,7 @@ Partial Class frmInventario
         DepartamentoLabel.BackColor = System.Drawing.Color.Transparent
         DepartamentoLabel.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DepartamentoLabel.ForeColor = System.Drawing.Color.Black
-        DepartamentoLabel.Location = New System.Drawing.Point(12, 84)
+        DepartamentoLabel.Location = New System.Drawing.Point(12, 128)
         DepartamentoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         DepartamentoLabel.Name = "DepartamentoLabel"
         DepartamentoLabel.Size = New System.Drawing.Size(164, 34)
@@ -126,7 +127,7 @@ Partial Class frmInventario
         Clave_del_productoLabel.BackColor = System.Drawing.Color.Transparent
         Clave_del_productoLabel.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Clave_del_productoLabel.ForeColor = System.Drawing.Color.Black
-        Clave_del_productoLabel.Location = New System.Drawing.Point(12, 127)
+        Clave_del_productoLabel.Location = New System.Drawing.Point(12, 40)
         Clave_del_productoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Clave_del_productoLabel.Name = "Clave_del_productoLabel"
         Clave_del_productoLabel.Size = New System.Drawing.Size(209, 34)
@@ -182,7 +183,7 @@ Partial Class frmInventario
         ExistenciaLabel.BackColor = System.Drawing.Color.Transparent
         ExistenciaLabel.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ExistenciaLabel.ForeColor = System.Drawing.Color.Black
-        ExistenciaLabel.Location = New System.Drawing.Point(12, 309)
+        ExistenciaLabel.Location = New System.Drawing.Point(12, 303)
         ExistenciaLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         ExistenciaLabel.Name = "ExistenciaLabel"
         ExistenciaLabel.Size = New System.Drawing.Size(116, 34)
@@ -196,7 +197,7 @@ Partial Class frmInventario
         FechaLabel.BackColor = System.Drawing.Color.Transparent
         FechaLabel.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FechaLabel.ForeColor = System.Drawing.Color.Black
-        FechaLabel.Location = New System.Drawing.Point(14, 357)
+        FechaLabel.Location = New System.Drawing.Point(12, 347)
         FechaLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         FechaLabel.Name = "FechaLabel"
         FechaLabel.Size = New System.Drawing.Size(76, 34)
@@ -247,7 +248,7 @@ Partial Class frmInventario
         Me.InventarioBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.InventarioBindingNavigator.Name = "InventarioBindingNavigator"
         Me.InventarioBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 31)
+        Me.InventarioBindingNavigator.Size = New System.Drawing.Size(1163, 27)
         Me.InventarioBindingNavigator.TabIndex = 19
         Me.InventarioBindingNavigator.Text = "BindingNavigator1"
         '
@@ -257,7 +258,7 @@ Partial Class frmInventario
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
         'InventarioBindingSource
@@ -359,27 +360,17 @@ Partial Class frmInventario
         '
         Me.txtiddepa.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InventarioBindingSource, "Id Departamento", True))
         Me.txtiddepa.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtiddepa.Location = New System.Drawing.Point(229, 40)
+        Me.txtiddepa.Location = New System.Drawing.Point(229, 84)
         Me.txtiddepa.Margin = New System.Windows.Forms.Padding(4)
         Me.txtiddepa.Name = "txtiddepa"
         Me.txtiddepa.Size = New System.Drawing.Size(416, 35)
         Me.txtiddepa.TabIndex = 20
         '
-        'txtdepa
-        '
-        Me.txtdepa.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InventarioBindingSource, "Departamento", True))
-        Me.txtdepa.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdepa.Location = New System.Drawing.Point(229, 84)
-        Me.txtdepa.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtdepa.Name = "txtdepa"
-        Me.txtdepa.Size = New System.Drawing.Size(416, 35)
-        Me.txtdepa.TabIndex = 22
-        '
         'txtclaveproducto
         '
         Me.txtclaveproducto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InventarioBindingSource, "Clave del producto", True))
         Me.txtclaveproducto.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtclaveproducto.Location = New System.Drawing.Point(229, 127)
+        Me.txtclaveproducto.Location = New System.Drawing.Point(229, 41)
         Me.txtclaveproducto.Margin = New System.Windows.Forms.Padding(4)
         Me.txtclaveproducto.Name = "txtclaveproducto"
         Me.txtclaveproducto.Size = New System.Drawing.Size(416, 35)
@@ -419,7 +410,7 @@ Partial Class frmInventario
         '
         Me.txtexistencia.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InventarioBindingSource, "Existencia", True))
         Me.txtexistencia.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtexistencia.Location = New System.Drawing.Point(229, 309)
+        Me.txtexistencia.Location = New System.Drawing.Point(229, 303)
         Me.txtexistencia.Margin = New System.Windows.Forms.Padding(4)
         Me.txtexistencia.Name = "txtexistencia"
         Me.txtexistencia.Size = New System.Drawing.Size(416, 35)
@@ -429,7 +420,7 @@ Partial Class frmInventario
         '
         Me.txtfecha.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.InventarioBindingSource, "Fecha", True))
         Me.txtfecha.Font = New System.Drawing.Font("Gill Sans MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtfecha.Location = New System.Drawing.Point(229, 355)
+        Me.txtfecha.Location = New System.Drawing.Point(229, 346)
         Me.txtfecha.Margin = New System.Windows.Forms.Padding(4)
         Me.txtfecha.Name = "txtfecha"
         Me.txtfecha.Size = New System.Drawing.Size(416, 35)
@@ -612,8 +603,9 @@ Partial Class frmInventario
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txtiddepa)
         Me.GroupBox1.Controls.Add(Me.txtdepa)
+        Me.GroupBox1.Controls.Add(Me.cboDepto)
+        Me.GroupBox1.Controls.Add(Me.txtiddepa)
         Me.GroupBox1.Controls.Add(DepartamentoLabel)
         Me.GroupBox1.Controls.Add(Id_DepartamentoLabel)
         Me.GroupBox1.Controls.Add(Me.txtdescripcion)
@@ -624,9 +616,9 @@ Partial Class frmInventario
         Me.GroupBox1.Controls.Add(DescripciónLabel)
         Me.GroupBox1.Controls.Add(Me.txtclaveproducto)
         Me.GroupBox1.Controls.Add(ExistenciaLabel)
-        Me.GroupBox1.Controls.Add(Clave_del_productoLabel)
         Me.GroupBox1.Controls.Add(Me.txtexistencia)
         Me.GroupBox1.Controls.Add(FechaLabel)
+        Me.GroupBox1.Controls.Add(Clave_del_productoLabel)
         Me.GroupBox1.Controls.Add(Me.txtfecha)
         Me.GroupBox1.Font = New System.Drawing.Font("Gill Sans MT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 114)
@@ -649,6 +641,25 @@ Partial Class frmInventario
         Me.btnCancelar.TabIndex = 78
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'cboDepto
+        '
+        Me.cboDepto.Font = New System.Drawing.Font("Gill Sans MT", 13.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDepto.FormattingEnabled = True
+        Me.cboDepto.Location = New System.Drawing.Point(229, 126)
+        Me.cboDepto.Name = "cboDepto"
+        Me.cboDepto.Size = New System.Drawing.Size(416, 39)
+        Me.cboDepto.TabIndex = 35
+        '
+        'txtdepa
+        '
+        Me.txtdepa.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InventarioBindingSource, "Departamento", True))
+        Me.txtdepa.Font = New System.Drawing.Font("Gill Sans MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdepa.Location = New System.Drawing.Point(229, 125)
+        Me.txtdepa.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtdepa.Name = "txtdepa"
+        Me.txtdepa.Size = New System.Drawing.Size(416, 39)
+        Me.txtdepa.TabIndex = 36
         '
         'frmInventario
         '
@@ -707,7 +718,6 @@ Partial Class frmInventario
     Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents InventarioBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtiddepa As System.Windows.Forms.TextBox
-    Friend WithEvents txtdepa As System.Windows.Forms.TextBox
     Friend WithEvents txtclaveproducto As System.Windows.Forms.TextBox
     Friend WithEvents txtdescripcion As System.Windows.Forms.TextBox
     Friend WithEvents txtpreciocompra As System.Windows.Forms.TextBox
@@ -731,4 +741,6 @@ Partial Class frmInventario
     Friend WithEvents btnAlta As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents cboDepto As ComboBox
+    Friend WithEvents txtdepa As TextBox
 End Class

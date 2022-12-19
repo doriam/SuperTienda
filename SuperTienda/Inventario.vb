@@ -3,6 +3,8 @@
     Dim buscar As Integer = 1
     Dim eliminar As Integer = 1
     Dim respuesta As Integer
+    Dim Conexion As OleDb.OleDbConnection
+
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         End
     End Sub
@@ -23,12 +25,13 @@
         'TODO: esta línea de código carga datos en la tabla 'SuperTiendaDataSet.Inventario' Puede moverla o quitarla según sea necesario.
         Me.InventarioTableAdapter.Fill(Me.SuperTiendaDataSet.Inventario)
         btnGuardar.Enabled = False
+        LlenarCombo()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If up = False Then
             Try
-                Me.InventarioTableAdapter.Insert(txtiddepa.Text, txtdepa.Text, txtclaveproducto.Text, txtdescripcion.Text, txtpreciocompra.Text, txtprecioventa.Text, txtexistencia.Text, txtfecha.Text)
+                Me.InventarioTableAdapter.Insert(txtiddepa.Text, cboDepto.Text, txtclaveproducto.Text, txtdescripcion.Text, txtpreciocompra.Text, txtprecioventa.Text, txtexistencia.Text, txtfecha.Text)
                 Me.InventarioTableAdapter.Fill(Me.SuperTiendaDataSet.Inventario)
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -47,6 +50,8 @@
         End If
         txtiddepa.Enabled = True
         txtclaveproducto.Enabled = True
+        txtdepa.Visible = True
+        cboDepto.Visible = False
         btnGuardar.Enabled = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
@@ -90,11 +95,7 @@
         txtiddepa.Enabled = True
         txtdepa.Enabled = True
         txtclaveproducto.Enabled = False
-        txtdescripcion.Enabled = True
-        txtpreciocompra.Enabled = True
-        txtprecioventa.Enabled = True
-        txtexistencia.Enabled = True
-        txtfecha.Enabled = True
+        cboDepto.Visible = False
         btnGuardar.Enabled = True
         btnAlta.Enabled = False
         btnEliminar.Enabled = False
@@ -105,7 +106,10 @@
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtiddepa.Text = ""
-        txtdepa.Text = ""
+        txtiddepa.Enabled = False
+        txtdepa.Visible = False
+        cboDepto.Visible = True
+        cboDepto.SelectedValue = -1
         txtclaveproducto.Text = ""
         txtdescripcion.Text = ""
         txtpreciocompra.Text = ""
@@ -158,8 +162,11 @@
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         buscar = 1
         eliminar = 1
+        txtiddepa.Enabled = True
         txtclaveproducto.Enabled = True
         txtdepa.Enabled = True
+        txtdepa.Visible = True
+        cboDepto.Visible = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
         btnModificar.Enabled = True
@@ -169,5 +176,26 @@
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+    End Sub
+
+    Private Sub LlenarCombo()
+        Conexion = New OleDb.OleDbConnection
+        Conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\SuperTienda.accdb"
+        Conexion.Open()
+        Dim da As New OleDb.OleDbDataAdapter("select * from Departamentos", Conexion)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        If ds.Tables(0).Rows.Count > 0 Then
+            cboDepto.DataSource = ds.Tables(0)
+            cboDepto.DisplayMember = "Departamento"
+            cboDepto.ValueMember = "Id Departamento"
+            cboDepto.SelectedIndex = -1
+        End If
+    End Sub
+
+    Private Sub cboDepto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDepto.SelectedIndexChanged
+        If txtiddepa.Enabled = False Then
+            txtiddepa.Text = cboDepto.SelectedIndex
+        End If
     End Sub
 End Class

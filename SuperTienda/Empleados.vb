@@ -36,7 +36,7 @@ Public Class frmEmpleados
         If eliminar = 2 Then
             respuesta = MsgBox("¿Está seguro de borrar este dato?", vbQuestion + vbYesNo + vbDefaultButton2, "Eliminar empleado")
             If respuesta = vbYes Then
-                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, cboDepto.Text, txtdate.Text)
+                Me.EmpleadosTableAdapter.Delete(txtclaveempleado.Text, txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, txtdepto.Text, txtdate.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Se ha eliminado con éxito el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 eliminar = 1
@@ -59,20 +59,25 @@ Public Class frmEmpleados
                 MessageBox.Show("Información guardada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
+                MessageBox.Show(String.Format("Error: {0}, problema agregar", ex.Message))
                 MessageBox.Show("Información no actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
         Else
             Try
-                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, cboDepto.Text, txtdate.Text, txtclaveempleado.Text)
+                Me.EmpleadosTableAdapter.MODIFICAR(txtsexo.Text, txtnombre.Text, txtedad.Text, txtestado.Text, txtdireccion.Text, txtciudad.Text, txttelefono.Text, txtdepto.Text, txtdate.Text, txtclaveempleado.Text)
                 Me.EmpleadosTableAdapter.Fill(Me.SuperTiendaDataSet.Empleados)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtclaveempleado.Enabled = True
             Catch ex As Exception
-                MessageBox.Show("Información no actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(String.Format("Error: {0}", ex.Message))
+
+                MessageBox.Show("Información no actualizada, problema modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
-        txtclaveempleado.Enabled = False
+        txtclaveempleado.Enabled = True
+        txtdepto.Visible = True
+        cboDepto.Visible = False
         btnGuardar.Enabled = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
@@ -94,7 +99,8 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
-        txtclaveempleado.Enabled = False
+        txtclaveempleado.Enabled = True
+        cboDepto.Visible = False
         btnGuardar.Enabled = True
         btnAlta.Enabled = False
         btnEliminar.Enabled = False
@@ -105,7 +111,7 @@ Public Class frmEmpleados
 
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
-        txtclaveempleado.Enabled = False
+        txtclaveempleado.Enabled = True
         txtclaveempleado.Text = ""
         txtsexo.Text = ""
         txtnombre.Text = ""
@@ -114,7 +120,8 @@ Public Class frmEmpleados
         txtdireccion.Text = ""
         txtciudad.Text = ""
         txttelefono.Text = ""
-        'txtdepartamento.Text = ""
+        txtdepto.Visible = False
+        cboDepto.Visible = True
         cboDepto.SelectedValue = -1
         txtdate.Text = ""
         btnGuardar.Enabled = True
@@ -132,6 +139,8 @@ Public Class frmEmpleados
         buscar = 1
         eliminar = 1
         txtclaveempleado.Enabled = True
+        txtdepto.Visible = True
+        cboDepto.Visible = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
         btnmodificar.Enabled = True
@@ -152,5 +161,17 @@ Public Class frmEmpleados
             cboDepto.ValueMember = "Id Departamento"
             cboDepto.SelectedIndex = -1
         End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtdepto.TextChanged
+
+    End Sub
+
+    Private Sub EmpleadosDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EmpleadosDataGridView.CellContentClick
+
+    End Sub
+
+    Private Sub txtciudad_TextChanged(sender As Object, e As EventArgs) Handles txtciudad.TextChanged
+
     End Sub
 End Class

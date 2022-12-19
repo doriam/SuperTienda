@@ -34,10 +34,6 @@ Partial Class frmEmpleados
         Dim DepartamentoLabel As System.Windows.Forms.Label
         Dim Fecha_de_contrataciónLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpleados))
-        Me.SuperTiendaDataSet = New WindowsApplication1.SuperTiendaDataSet()
-        Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmpleadosTableAdapter = New WindowsApplication1.SuperTiendaDataSetTableAdapters.EmpleadosTableAdapter()
-        Me.TableAdapterManager = New WindowsApplication1.SuperTiendaDataSetTableAdapters.TableAdapterManager()
         Me.EmpleadosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -68,6 +64,11 @@ Partial Class frmEmpleados
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.lblempleado = New System.Windows.Forms.Label()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btnAlta = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.txtdepto = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -78,10 +79,10 @@ Partial Class frmEmpleados
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblempleado = New System.Windows.Forms.Label()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.btnAlta = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuperTiendaDataSet = New WindowsApplication1.SuperTiendaDataSet()
+        Me.EmpleadosTableAdapter = New WindowsApplication1.SuperTiendaDataSetTableAdapters.EmpleadosTableAdapter()
+        Me.TableAdapterManager = New WindowsApplication1.SuperTiendaDataSetTableAdapters.TableAdapterManager()
         Clave_de_empleadoLabel = New System.Windows.Forms.Label()
         SexoLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
@@ -92,12 +93,12 @@ Partial Class frmEmpleados
         TeléfonoLabel = New System.Windows.Forms.Label()
         DepartamentoLabel = New System.Windows.Forms.Label()
         Fecha_de_contrataciónLabel = New System.Windows.Forms.Label()
-        CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpleadosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EmpleadosBindingNavigator.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Clave_de_empleadoLabel
@@ -210,30 +211,6 @@ Partial Class frmEmpleados
         Fecha_de_contrataciónLabel.TabIndex = 62
         Fecha_de_contrataciónLabel.Text = "Fecha de contratación:"
         '
-        'SuperTiendaDataSet
-        '
-        Me.SuperTiendaDataSet.DataSetName = "SuperTiendaDataSet"
-        Me.SuperTiendaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmpleadosBindingSource
-        '
-        Me.EmpleadosBindingSource.DataMember = "Empleados"
-        Me.EmpleadosBindingSource.DataSource = Me.SuperTiendaDataSet
-        '
-        'EmpleadosTableAdapter
-        '
-        Me.EmpleadosTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.DepartamentosTableAdapter = Nothing
-        Me.TableAdapterManager.EmpleadosTableAdapter = Me.EmpleadosTableAdapter
-        Me.TableAdapterManager.InventarioTableAdapter = Nothing
-        Me.TableAdapterManager.PromocionesTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.SuperTiendaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
-        '
         'EmpleadosBindingNavigator
         '
         Me.EmpleadosBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
@@ -249,7 +226,7 @@ Partial Class frmEmpleados
         Me.EmpleadosBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.EmpleadosBindingNavigator.Name = "EmpleadosBindingNavigator"
         Me.EmpleadosBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.EmpleadosBindingNavigator.Size = New System.Drawing.Size(1369, 31)
+        Me.EmpleadosBindingNavigator.Size = New System.Drawing.Size(1369, 27)
         Me.EmpleadosBindingNavigator.TabIndex = 0
         Me.EmpleadosBindingNavigator.Text = "BindingNavigator1"
         '
@@ -259,7 +236,7 @@ Partial Class frmEmpleados
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
         '
         'BindingNavigatorCountItem
@@ -468,6 +445,7 @@ Partial Class frmEmpleados
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.txtdepto)
         Me.GroupBox1.Controls.Add(Me.cboDepto)
         Me.GroupBox1.Controls.Add(Fecha_de_contrataciónLabel)
         Me.GroupBox1.Controls.Add(Clave_de_empleadoLabel)
@@ -564,6 +542,70 @@ Partial Class frmEmpleados
         Me.EmpleadosDataGridView.Size = New System.Drawing.Size(1320, 155)
         Me.EmpleadosDataGridView.TabIndex = 70
         '
+        'lblempleado
+        '
+        Me.lblempleado.BackColor = System.Drawing.Color.Transparent
+        Me.lblempleado.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblempleado.ForeColor = System.Drawing.Color.Black
+        Me.lblempleado.Location = New System.Drawing.Point(489, 46)
+        Me.lblempleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblempleado.Name = "lblempleado"
+        Me.lblempleado.Size = New System.Drawing.Size(513, 54)
+        Me.lblempleado.TabIndex = 72
+        Me.lblempleado.Text = "Empleados"
+        Me.lblempleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnmodificar
+        '
+        Me.btnmodificar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnmodificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnmodificar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.btnmodificar.Location = New System.Drawing.Point(1115, 368)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(212, 64)
+        Me.btnmodificar.TabIndex = 74
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
+        '
+        'btnAlta
+        '
+        Me.btnAlta.BackColor = System.Drawing.SystemColors.Control
+        Me.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnAlta.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.btnAlta.Location = New System.Drawing.Point(881, 368)
+        Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAlta.Name = "btnAlta"
+        Me.btnAlta.Size = New System.Drawing.Size(212, 64)
+        Me.btnAlta.TabIndex = 75
+        Me.btnAlta.Text = "Alta de registros"
+        Me.btnAlta.UseVisualStyleBackColor = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
+        Me.btnCancelar.Location = New System.Drawing.Point(881, 263)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(446, 64)
+        Me.btnCancelar.TabIndex = 76
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'txtdepto
+        '
+        Me.txtdepto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Departamento", True))
+        Me.txtdepto.Font = New System.Drawing.Font("Gill Sans MT", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdepto.Location = New System.Drawing.Point(312, 410)
+        Me.txtdepto.Name = "txtdepto"
+        Me.txtdepto.Size = New System.Drawing.Size(472, 42)
+        Me.txtdepto.TabIndex = 78
+        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "Clave de empleado"
@@ -644,60 +686,29 @@ Partial Class frmEmpleados
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.Width = 125
         '
-        'lblempleado
+        'EmpleadosBindingSource
         '
-        Me.lblempleado.BackColor = System.Drawing.Color.Transparent
-        Me.lblempleado.Font = New System.Drawing.Font("Gill Sans MT", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblempleado.ForeColor = System.Drawing.Color.Black
-        Me.lblempleado.Location = New System.Drawing.Point(489, 46)
-        Me.lblempleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblempleado.Name = "lblempleado"
-        Me.lblempleado.Size = New System.Drawing.Size(513, 54)
-        Me.lblempleado.TabIndex = 72
-        Me.lblempleado.Text = "Empleados"
-        Me.lblempleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.EmpleadosBindingSource.DataMember = "Empleados"
+        Me.EmpleadosBindingSource.DataSource = Me.SuperTiendaDataSet
         '
-        'btnmodificar
+        'SuperTiendaDataSet
         '
-        Me.btnmodificar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnmodificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnmodificar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnmodificar.Location = New System.Drawing.Point(1115, 368)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(212, 64)
-        Me.btnmodificar.TabIndex = 74
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = False
+        Me.SuperTiendaDataSet.DataSetName = "SuperTiendaDataSet"
+        Me.SuperTiendaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'btnAlta
+        'EmpleadosTableAdapter
         '
-        Me.btnAlta.BackColor = System.Drawing.SystemColors.Control
-        Me.btnAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnAlta.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnAlta.Location = New System.Drawing.Point(881, 368)
-        Me.btnAlta.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(212, 64)
-        Me.btnAlta.TabIndex = 75
-        Me.btnAlta.Text = "Alta de registros"
-        Me.btnAlta.UseVisualStyleBackColor = False
+        Me.EmpleadosTableAdapter.ClearBeforeFill = True
         '
-        'btnCancelar
+        'TableAdapterManager
         '
-        Me.btnCancelar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnCancelar.Font = New System.Drawing.Font("Gill Sans MT", 15.75!)
-        Me.btnCancelar.Location = New System.Drawing.Point(881, 263)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(446, 64)
-        Me.btnCancelar.TabIndex = 76
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = False
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.DepartamentosTableAdapter = Nothing
+        Me.TableAdapterManager.EmpleadosTableAdapter = Me.EmpleadosTableAdapter
+        Me.TableAdapterManager.InventarioTableAdapter = Nothing
+        Me.TableAdapterManager.PromocionesTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.SuperTiendaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UsuariosTableAdapter = Nothing
         '
         'frmEmpleados
         '
@@ -723,14 +734,14 @@ Partial Class frmEmpleados
         Me.Name = "frmEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Datos empleados"
-        CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpleadosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EmpleadosBindingNavigator.ResumeLayout(False)
         Me.EmpleadosBindingNavigator.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.EmpleadosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuperTiendaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -783,4 +794,5 @@ Partial Class frmEmpleados
     Friend WithEvents btnAlta As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents cboDepto As ComboBox
+    Friend WithEvents txtdepto As TextBox
 End Class

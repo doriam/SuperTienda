@@ -22,6 +22,8 @@
         Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
         btnGuardar.Enabled = False
         LlenarCombo()
+        txtsubtotal.Enabled = False
+        txttotal.Enabled = False
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -37,24 +39,10 @@
         If up = False Then
             Try
                 Dim subtotal As String = 0
-                'Dim precio, cantidad As String
-                'If Not String.IsNullOrEmpty(txtsubtotal.Text) Then
-
-                'subtotal = CDbl(txtsubtotal.Text)
-                'End If
-                'precio = txtpreciounitario.Text
-                'cantidad = txtcantidad.Text
                 subtotal = txtpreciounitario.Text * txtcantidad.Text
-                'txtsubtotal.Text = subtotal
                 Dim total As String = 0
                 Dim descuento As Decimal
-                'If Not String.IsNullOrEmpty(txttotal.Text) Then
-
-                'total = CDbl(txttotal.Text)
-                'End If
-                'subtotal = txtsubtotal.Text
                 txtsubtotal.Text = subtotal
-                'descuento = txtdescuento.Text
                 Decimal.TryParse(txtdescuento.Text, descuento)
                 txtdescuento.Text = descuento
                 total = subtotal * descuento
@@ -97,14 +85,14 @@
                 Me.PromocionesTableAdapter.Fill(Me.SuperTiendaDataSet.Promociones)
                 MessageBox.Show("Información actualizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtid.Enabled = True
-                txtsubtotal.Enabled = True
-                txttotal.Enabled = True
             Catch ex As Exception
                 MessageBox.Show(String.Format("Error: {0}", ex.Message))
                 'MessageBox.Show("Información no actuaizada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)'
             End Try
         End If
         txtid.Enabled = False
+        txtdepto.Visible = True
+        cboDepto.Visible = False
         btnGuardar.Enabled = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
@@ -147,13 +135,11 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         txtid.Enabled = False
         txtcantidad.Enabled = True
-        cboDepto.Enabled = True
+        cboDepto.Visible = False
         txtdescuento.Enabled = True
         txtpreciounitario.Enabled = True
         txtproducto.Enabled = True
         txtpromo.Enabled = True
-        txtsubtotal.Enabled = False
-        txttotal.Enabled = False
 
         btnGuardar.Enabled = True
         btnAlta.Enabled = False
@@ -165,7 +151,10 @@
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
         txtid.Enabled = True
+        txtid.Text = ""
         txtcantidad.Text = ""
+        txtdepto.Visible = False
+        cboDepto.Visible = True
         cboDepto.SelectedValue = -1
         txtdescuento.Text = ""
         txtpreciounitario.Text = ""
@@ -173,8 +162,6 @@
         txtpromo.Text = ""
         txtsubtotal.Text = ""
         txttotal.Text = ""
-        txtsubtotal.Enabled = False
-        txttotal.Enabled = False
         btnGuardar.Enabled = True
         btnEliminar.Enabled = False
         btnBuscar.Enabled = False
@@ -186,6 +173,8 @@
         buscar = 1
         eliminar = 1
         txtid.Enabled = True
+        txtdepto.Visible = True
+        cboDepto.Visible = False
         btnEliminar.Enabled = True
         btnBuscar.Enabled = True
         btnModificar.Enabled = True
